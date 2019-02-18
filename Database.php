@@ -27,8 +27,8 @@ class Database{
     }
 
     public function query($statement){
-      var_dump($this->getPDO());
-      $query = $this->getPDO()->query($statement);
+      $query = $this->getPDO()->prepare($statement);
+      $query->execute();
       $response = $query->fetchAll(PDO::FETCH_OBJ);
       return $response;
     }
