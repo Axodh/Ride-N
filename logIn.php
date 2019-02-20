@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-
+<?php
+  require "header.php";
+?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +10,7 @@
   <link rel="stylesheet" href="css/theme.css" type="text/css">
 </head>
 
-<body class="bg-light">
+<body class="bg-light h-100 w-100">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar12">
         <span class="navbar-toggler-icon"></span>
@@ -23,34 +25,60 @@
           <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item"> <a class="nav-link" href="logInhtml.html">Log in</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Log in</a> </li>
           <li class="nav-item"> <a class="nav-link text-primary disabled" href="register.html">Register</a> </li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="py-5 text-center">
-    <div class="container">
-      <div class="row" style="">
-        <div class="mx-auto col-lg-6 col-10">
-          <h1>Bienvenue !</h1>
-          <p class="mb-3">When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees.</p>
-          <form class="text-left">
-            <div class="form-group"> <label for="form16">Nom</label> <input type="text" class="form-control" id="form16">
-              <div class="form-group"><label>Prénom</label><input type="text" class="form-control" id="form16"></div>
-            </div>
-            <div class="form-group" style=""> <label for="form17">Numéro Teléphone</label> <input type="text" class="form-control" id="form17" style=""> </div>
-            <div class="form-group" style=""> <label for="form17">Age</label> <input type="date" class="form-control" id="form17" style=""> </div>
-            <div class="form-group"> <label for="form18">Email</label> <input type="email" class="form-control" id="form18" placeholder="j.goethe@werther.com"> </div>
-            <div class="form-row">
-              <div class="form-group col-md-6"> <label for="form19">Mot de Passe</label> <input type="password" class="form-control" id="form19" placeholder="••••"> </div>
-              <div class="form-group col-md-6"> <label for="form20">Confirmer le Mot de Passe<br></label> <input type="password" class="form-control" id="form20" placeholder="••••"> </div>
-            </div>
-            <div class="form-group">
-              <div class="form-check"> <input class="form-check-input" type="checkbox" id="form21" value="on"> <label class="form-check-label" for="form21"> I Agree with <a href="#">Term and Conditions</a> of the service </label> </div>
-            </div> <button type="submit" class="btn btn-primary">Sign in</button>
+  <div class="py-5 text-center" style="	background-image: url(assets/styleguide/cover_1.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+    <div class="container h-75">
+      <div class="row mt-5" style="">
+        <div class="mx-auto col-md-6 col-10 bg-white p-5">
+          <h1 class="mb-4"></h1>
+          <form method="POST" action="connexionVerif.php">
+            <?php
+             $tab = [];
+             $type = '';
+
+             //si il y a une erreur dans le formulaire
+             if( !empty($_SESSION["errors_form"]) ){
+
+               //le tableau prend le talbleua des erreurs
+               $tab = $_SESSION["errors_form"];
+
+               //le type devient erreur
+               $type = 'error';
+
+               //je supprime le tableau d'erreur en session
+               unset($_SESSION["errors_form"]);
+
+               //sinon si il y a un succès
+             }elseif( !empty($_SESSION["success_form"]) ){
+               //le tableau prend le tableau des succes
+               $tab = $_SESSION["success_form"];
+               // le type devient succes
+               $type = 'success';
+               //je supprime le tableau des succes de la session
+               unset($_SESSION["success_form"]);
+             }
+
+             //si mon tableau n'est pas vide
+              if( !empty($tab)){
+                echo "<ul>";
+                //je le parcours (le tableau)
+                foreach ($tab as $value) {
+                  //j'affiche le résultat en fonction du type (succes ou erreur)
+                  echo "<li>".$submitForm[$type][$value];
+                }
+                echo "</ul>";
+              }
+            ?>
+            <div class="form-group"> <input type="email" class="form-control" placeholder="Enter email" id="form9" name="mailUser"> </div>
+            <div class="form-group mb-3"> <input type="password" class="form-control" placeholder="Password" id="form10" name="pwd"> <small class="form-text text-muted text-right">
+                <a href="#"> Recover password</a>
+              </small> </div> <button type="submit" class="btn btn-primary">Submit</button>
           </form>
-          <div class="form-group"><label>Label</label></div>
         </div>
       </div>
     </div>

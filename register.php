@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-
+<?php
+  require "header.php";
+?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,8 +25,8 @@
           <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item"> <a class="nav-link" href="logInhtml.html">Log in</a> </li>
-          <li class="nav-item"> <a class="nav-link text-primary disabled" href="register.html">Register</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="logIn.php">Log in</a> </li>
+          <li class="nav-item"> <a class="nav-link text-primary disabled" href="register.php">Register</a> </li>
         </ul>
       </div>
     </div>
