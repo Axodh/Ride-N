@@ -1,9 +1,13 @@
 <?php
 ini_set("display_errors", 1);
 require_once "Database.php";
+require_once "Manage.php";
 
 $db = new Database("viaxe","localhost","root","");
 $result = $db->query("SELECT mail,pseudo,age,gender FROM customer");
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -49,17 +53,7 @@ $result = $db->query("SELECT mail,pseudo,age,gender FROM customer");
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($result as $member):
-                 echo'
-                 <tr>
-                   <td>'.$member->mail.'</td>
-                   <td>'.$member->pseudo.'</td>
-                   <td>'.$member->age.'</td>
-                   <td>'.$member->gender.'</td>
-                 </tr>
-                 ';
-               endforeach;
-                  ?>
+                <?php $manage = new Manage($result);  ?>
               </tbody>
             </table>
           </div>
