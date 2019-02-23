@@ -24,6 +24,7 @@ class Manage{
                   <h5 class="modal-title">Modify User Info</h5> <button onclick="closeModal('.$member->id.')" type="button" class="closeBtn btn btn-danger" data-dismiss="modal"> <span>x</span> </button>
                 </div>
                 <div class="modal-body">
+                  <form method="POST" action="modify.php">
                       <p>Mail</p>
                       <input name="mail" type="text" value="'.$member->mail.'"/>
                       <p>Pseudo</p>
@@ -32,9 +33,11 @@ class Manage{
                       <input name="age" type="text" value="'.$member->age.'"/>
                       <p>Gender</p>
                       <input name="gender" type="text" value="'.$member->gender.'"/>
+                      <div class="modal-footer"> <button type="submit" class="btn btn-primary">Save changes</button> <button type="button" onclick="closeModal('.$member->id.')" class="btn btn-secondary" data-dismiss="modal">Close</button> </div>
+                    </form>
+                    </div>
                 </div>
-                <div class="modal-footer"> <button type="button" class="btn btn-primary">Save changes</button> <button type="button" onclick="closeModal('.$member->id.')" class="btn btn-secondary" data-dismiss="modal">Close</button> </div>
-              </div>
+
             </div>
           </div>
 
@@ -45,6 +48,6 @@ class Manage{
   }
 
   public function editUser($result){
-    echo 'Hello';
+
   }
 }

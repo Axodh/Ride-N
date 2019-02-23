@@ -33,4 +33,16 @@ class Database{
       return $response;
     }
 
+    public function queryModify($statement, $mail, $pseudo, $age, $gender){
+      $query = $this->getPDO()->prepare($statement);
+      var_dump($query, $statement,$mail, $pseudo, $age, $gender);
+      $query->execute([
+                      "mail"=>$mail,
+                      "pseudo"=>$pseudo,
+                      "age"=>$age,
+                      "gender"=>$gender,
+                    ]);
+      header("location: backOffice.php");
+    }
+
 }
