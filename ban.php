@@ -6,7 +6,6 @@ require_once "Database.php";
 $db = new Database("viaxe","localhost","root","");
 
 if($_POST["isBanned"] == 0){
-  var_dump($_POST["isBanned"], $_POST["mail"]);
   $modify = $db->queryBan("UPDATE customer SET isBanned = 1 WHERE mail = :mail",  $_POST["mail"]);
 }
 

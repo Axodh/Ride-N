@@ -7,6 +7,9 @@ require_once "Manage.php";
 $db = new Database("viaxe","localhost","root","");
 $resultUnbanned = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM customer WHERE isBanned = 0");
 $resultBanned = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM customer WHERE isBanned = 1");
+$resultUnbannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM guide WHERE isBanned = 0");
+$resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM guide WHERE isBanned = 1");
+
 
 ?>
 
@@ -46,7 +49,7 @@ $resultBanned = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM custo
           <li class="nav-item"> <a href="" class="active nav-link" data-toggle="tab" data-target="#tabone">Client Manager</a> </li>
           <li class="nav-item"> <a class="nav-link" href="" data-toggle="tab" data-target="#tabtwo">Banned Client</a> </li>
           <li class="nav-item"> <a href="" class="nav-link" data-toggle="tab" data-target="#tabthree">Driver Manager</a> </li>
-          <li class="nav-item"> <a href="" class="nav-link" data-toggle="tab" data-target="#tabthree">Banned Manager</a> </li>
+          <li class="nav-item"> <a href="" class="nav-link" data-toggle="tab" data-target="#tabfour">Banned Driver</a> </li>
         </ul>
         <div class="tab-content mt-2">
           <div class="tab-pane fade show active" id="tabone" role="tabpanel">
@@ -103,10 +106,56 @@ $resultBanned = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM custo
               </div>
           </div>
           <div class="tab-pane fade" id="tabthree" role="tabpanel">
-            <p class="">In my soul and absorb its power, like the form of a beloved mistress, then I often think with longing.</p>
+            <div class="py-5">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="table-responsive">
+                      <table class="table table-striped table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col">Mail</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Gender</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php $manage = new Manage($resultUnbannedDriver);  ?>
+                        </tbody>
+                      </table>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="tab-pane fade" id="tabfour" role="tabpanel">
-            <p class="">In my soul and absorb its power, like the form of a beloved mistress, then I often think with longing.</p>
+            <div class="py-5">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="table-responsive">
+                      <table class="table table-striped table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col">Mail</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Gender</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php $manage = new Manage($resultBannedDriver);  ?>
+                        </tbody>
+                      </table>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
