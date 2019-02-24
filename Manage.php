@@ -12,11 +12,22 @@ class Manage{
     foreach ($result as $member):
      echo'
      <tr>
+     <form method="POST" action="ban.php">
        <td>'.$member->mail.'</td>
+       <input name="mail" value="'.$member->mail.'" type="hidden"/>
        <td>'.$member->pseudo.'</td>
+       <input name="pseudo" value="'.$member->pseudo.'" type="hidden"/>
        <td>'.$member->age.'</td>
+       <input name="age" value="'.$member->age.'" type="hidden"/>
        <td>'.$member->gender.'</td>
-       <td><button onclick="openModal('.$member->id.')" id="modalBtn" class="btn btn-primary"></button>
+       <input name="gender" value="'.$member->gender.'" type="hidden"/>
+       <td>'.$member->isBanned.'</td>
+       <input name="isBanned" value="'.$member->isBanned.'" type="hidden"/>
+       <td><button type="submit" class="btn btn-danger">Ban</button></td>
+    </form>
+       <td><button onclick="openModal('.$member->id.')" id="modalBtn" class="btn btn-primary">Modify</button></td>
+
+
           <div class="modal" id="'.$member->id.'">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -47,7 +58,4 @@ class Manage{
    endforeach;
   }
 
-  public function editUser($result){
-
-  }
 }

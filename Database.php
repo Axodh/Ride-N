@@ -35,13 +35,18 @@ class Database{
 
     public function queryModify($statement, $mail, $pseudo, $age, $gender){
       $query = $this->getPDO()->prepare($statement);
-      var_dump($query, $statement,$mail, $pseudo, $age, $gender);
       $query->execute([
                       "mail"=>$mail,
                       "pseudo"=>$pseudo,
                       "age"=>$age,
                       "gender"=>$gender,
                     ]);
+      header("location: backOffice.php");
+    }
+
+    public function queryBan($statement, $mail){
+      $query = $this->getPDO()->prepare($statement);
+      $query->execute(["mail"=>$mail]);
       header("location: backOffice.php");
     }
 
