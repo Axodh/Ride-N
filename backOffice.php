@@ -68,7 +68,9 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
                           </tr>
                         </thead>
                         <tbody>
-                          <?php $manage = new Manage($resultUnbanned);  ?>
+                          <?php $manage = new Manage($resultUnbanned);
+                                $manage->showUser($resultUnbanned); 
+                         ?>
 
                         </tbody>
                       </table>
@@ -95,7 +97,9 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
                             </tr>
                           </thead>
                           <tbody>
-                            <?php $manage = new Manage($resultBanned);  ?>
+                            <?php $manage = new Manage($resultBanned);
+                                  $manage->showUser($resultBanned);
+                           ?>
                           </tbody>
                         </table>
 
@@ -121,7 +125,9 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
                           </tr>
                         </thead>
                         <tbody>
-                          <?php $manage = new Manage($resultUnbannedDriver);  ?>
+                          <?php $manage = new Manage($resultUnbannedDriver);
+                                $manage->showDriver($resultUnbannedDriver);
+                          ?>
                         </tbody>
                       </table>
 
@@ -147,7 +153,9 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
                           </tr>
                         </thead>
                         <tbody>
-                          <?php $manage = new Manage($resultBannedDriver);  ?>
+                          <?php $manage = new Manage($resultBannedDriver);
+                                $manage->showDriver($resultBannedDriver);
+                          ?>
                         </tbody>
                       </table>
 
