@@ -1,5 +1,4 @@
 <?php
-session_start();
 ini_set("display_errors", 1);
 require_once "Database.php";
 require_once "Manage.php";
@@ -18,6 +17,14 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        <form class="form-inline">
+          <div class="input-group">
+            <form method="POST" action="search.php">
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search"/>
+              <div class="input-group-append"><button type="button" onclick="research()" class="btn btn-primary" ><i class="fa fa-search"></i></button></div>
+            </form>
+          </div>
+        </form>
         <ul class="nav nav-tabs">
           <li class="nav-item"> <a href="" class="active nav-link" data-toggle="tab" data-target="#tabone">Client Manager</a> </li>
           <li class="nav-item"> <a class="nav-link" href="" data-toggle="tab" data-target="#tabtwo">Banned Client</a> </li>
@@ -143,7 +150,7 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
     </div>
   </div>
 </div>
-
+  <script src="search.js"> </script>
   <script src="modal.js"> </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
