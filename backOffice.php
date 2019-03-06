@@ -20,8 +20,18 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
         <form class="form-inline">
           <div class="input-group">
             <form method="POST" action="search.php">
+              <label for=user>User</label>
+              <select class="custom-select d-block w-100" id="condition" required="">
+                 <option id="user" value="user" >User</option>
+                 <option id="driver" value="driver">Driver</option>
+              </select>
+              <label for=condition>Condition</label>
+              <select class="custom-select d-block w-100" id="condition" required="">
+                 <option id="nBanned" value="nBanned" >Not Banned</option>
+                 <option id="Banned" value="banned">Banned</option>
+              </select>
               <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search"/>
-              <div class="input-group-append"><button type="button" onclick="research()" class="btn btn-primary" ><i class="fa fa-search"></i></button></div>
+              <div class="input-group-append"><button type="button" onclick="research()" class="btn btn-primary"><i class="fa fa-search"></i></button></div>
             </form>
           </div>
         </form>
