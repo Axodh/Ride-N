@@ -10,10 +10,10 @@ class Database{
 
     public function __construct($dbname = 'riden', $dbhost = 'localhost', $dbuser = 'root', $dbpwd = ' '){
 
-   $this->db_name = $dbname;
-   $this->db_host = $dbhost;
-   $this->db_user = $dbuser;
-   $this->db_pwd = $dbpwd;
+     $this->db_name = $dbname;
+     $this->db_host = $dbhost;
+     $this->db_user = $dbuser;
+     $this->db_pwd = $dbpwd;
 
 
     }
