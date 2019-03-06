@@ -25,6 +25,7 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
             </form>
           </div>
         </form>
+        <div id = "display"></div>
         <ul class="nav nav-tabs">
           <li class="nav-item"> <a href="" class="active nav-link" data-toggle="tab" data-target="#tabone">Client Manager</a> </li>
           <li class="nav-item"> <a class="nav-link" href="" data-toggle="tab" data-target="#tabtwo">Banned Client</a> </li>
