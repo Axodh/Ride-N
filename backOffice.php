@@ -9,11 +9,10 @@ $resultBanned = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM custo
 $resultUnbannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM guide WHERE isBanned = 0");
 $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM guide WHERE isBanned = 1");
 
-
 ?>
 
 
-  <div class="py-5">
+<div class="py-5">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -59,10 +58,9 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
                           </tr>
                         </thead>
                         <tbody>
-                          <?php $manage = new Manage($resultUnbanned);
-                                $manage->showUser($resultUnbanned);
-                         ?>
-
+                            <?php $manage = new Manage($resultUnbanned);
+                            $manage->showUser($resultUnbanned);
+                            ?>
                         </tbody>
                       </table>
 

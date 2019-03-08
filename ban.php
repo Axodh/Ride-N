@@ -6,7 +6,6 @@ $db = new Database("viaxe","localhost","root","");
 
 if($_POST["isBanned"] == 0){
   $modify = $db->queryBan("UPDATE customer SET isBanned = 1 WHERE mail = :mail",  $_POST["mail"]);
-  echo "OK";
 }
 
 if($_POST["isBanned"] == 1){
