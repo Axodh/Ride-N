@@ -17,7 +17,7 @@ function generateAccessToken($mailDriver){
 	//modification de la bdd avec un nouvel access token
 	$accessToken = MD5(uniqid()."epzibgOJV?S1212Sfx>");
 	//inserer en bdd le token
-	$addToken = $db->prepare("UPDATE USER set access_token = :accessToken WHERE email = :email");
+	$addToken = $db->prepare("UPDATE driver set accessToken = :accessToken WHERE mailDriver = :mailDriver");
 	$addToken->execute(["accessToken" => $accessToken, "mailDriver"=>$mailDriver]);
 	//stocker dans une variable de session le token
 	return $accessToken;
