@@ -37,7 +37,7 @@ $db = new Database("viaxe","localhost","root","");
     foreach ($statement as $member):
      echo'
      <tr>
-     <form method="POST" action="ban.php">
+     <form method="POST" action="">
        <td>'.$member->mail.'</td>
        <input name="mail" value="'.$member->mail.'" type="hidden"/>
        <td>'.$member->pseudo.'</td>
@@ -48,7 +48,7 @@ $db = new Database("viaxe","localhost","root","");
        <input name="gender" value="'.$member->gender.'" type="hidden"/>
        <td>'.$member->isBanned.'</td>
        <input name="isBanned" value="'.$member->isBanned.'" type="hidden"/>
-       <td><button type="submit" class="btn btn-danger">Ban</button></td>
+       <td><button onclick="ban(\''.$member->mail.'\','.$member->isBanned.')" type="submit" class="btn btn-danger">Ban</button></td>
     </form>
        <td><button onclick="openModal('.$member->id.')" id="modalBtn" class="btn btn-primary">Modify</button></td>
 

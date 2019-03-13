@@ -2,10 +2,10 @@ function research(){
 
   var res = document.getElementById("inlineFormInputGroup").value;
 
-  var test = document.querySelectorAll("option:checked");
+  var filter = document.querySelectorAll("option:checked");
 
-  var filterUser = test[0].value;
-  var filterBan = test[1].value;
+  var filterUser = filter[0].value;
+  var filterBan = filter[1].value;
 
 
 
