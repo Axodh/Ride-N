@@ -22,3 +22,35 @@ function generateAccessToken($mailDriver){
 	//stocker dans une variable de session le token
 	return $accessToken;
 }
+
+function isConnected(){
+	 if(!empty($_SESSION["mailUser"])){
+		 $db = connectDb();
+		 $checkSession = $db->prepare("SELECT 1 FROM user WHERE mailUser = :mailUser");
+		 $checkSession->execute([
+								 "mailUser"=>$_SESSION["mailUser"],
+								 ]);
+
+		 if($checkSession->rowCount()){
+			 $_SESSION["accessToken"] = generateAccessToken($_SESSION["mailUser"]);
+			 return true;
+		 }
+		 else{
+			 logout();
+			 return false;
+		 }
+	 }
+	 else return false;
+ }
+
+function logout($redirect = false){
+ $db = connectDb();
+
+ $out = $db->prepare("UPDATE user WHERE mailUser = :mailUser");
+ $out->execute(["mailUser"=>$_SESSION["mailUser"]]);
+ unset($_SESSION["mailUser"]);
+
+ if($redirect){
+	 header("Location: index.php");
+ }
+}

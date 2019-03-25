@@ -27,5 +27,5 @@
   	if($error){
   		$_SESSION["dataForm"] = $_POST;
   		$_SESSION["errors_form"] = $submitForm['error'];
-  		header("Location: connexion.php");
+  		header("Location: logIn.php");
   	}

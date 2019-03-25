@@ -3,7 +3,7 @@ ini_set("display_errors", 1);
 require_once "Database.php";
 require_once "Manage.php";
 require_once "navbar.php";
-$db = new Database("viaxe","localhost","root","");
+$db = new Database("riden","localhost","root","");
 $resultUnbanned = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM customer WHERE isBanned = 0");
 $resultBanned = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM customer WHERE isBanned = 1");
 $resultUnbannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM guide WHERE isBanned = 0");
