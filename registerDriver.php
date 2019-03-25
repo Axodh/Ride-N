@@ -49,7 +49,7 @@
               }
             ?>
           <p class="mb-3">When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees.</p>
-          <form class="text-left">
+          <form class="text-left" method="POST" action="">
             <div class="form-group"> <label for="form16">Nom</label> <input type="text" name="nameDriver" class="form-control" id="form16" value="<?php echo ( isset($dataForm["nameDriver"]))?$dataForm["nameDriver"]:"";?>"/>
                                                                                                                                           <!-- lors d'un retour en arriere les valeurs restent affiché -->
               <div class="form-group"><label>Prénom</label><input type="text" class="form-control" id="form16" name="surnameDriver" value="<?php echo ( isset($dataForm["surnameDriver"]))?$dataForm["surnameDriver"]:"";?>"/></div>

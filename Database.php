@@ -8,7 +8,7 @@ class Database{
     private $db_pwd;
     private $pdo;
 
-    public function __construct($dbname = 'riden', $dbhost = 'localhost', $dbuser = 'root', $dbpwd = ' '){
+    public function __construct($dbname = 'riden', $dbhost = 'localhost', $dbuser = 'root', $dbpwd = ''){
 
      $this->db_name = $dbname;
      $this->db_host = $dbhost;
@@ -43,10 +43,16 @@ class Database{
       header("location: backOffice.php");
     }
 
-    public function queryBan($statement, $mail){
+    public function queryBan($statement, $mailUser){
       $query = $this->getPDO()->prepare($statement);
-      $query->execute(["mail"=>$mail]);
-      header("location: backOffice.php");
+      $query->execute(["mailUser"=>$mailUser]);
+      var_dump($mailUser);
+    }
+
+    public function queryBanDriver($statement, $mailDriver){
+      $query = $this->getPDO()->prepare($statement);
+      $query->execute(["mailDriver"=>$mailDriver]);
+      var_dump($mailDriver);
     }
 
 }

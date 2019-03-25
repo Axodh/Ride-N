@@ -1,13 +1,8 @@
 <?php
 ini_set("display_errors", 1);
 require_once "Database.php";
-require_once "Manage.php";
+require_once "manage.php";
 require_once "navbar.php";
-$db = new Database("riden","localhost","root","");
-$resultUnbanned = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM customer WHERE isBanned = 0");
-$resultBanned = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM customer WHERE isBanned = 1");
-$resultUnbannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM guide WHERE isBanned = 0");
-$resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM guide WHERE isBanned = 1");
 
 ?>
 
@@ -54,13 +49,10 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
                             <th scope="col">Mail</th>
                             <th scope="col">First</th>
                             <th scope="col">Last</th>
-                            <th scope="col">Gender</th>
                           </tr>
                         </thead>
                         <tbody>
-                            <?php $manage = new Manage($resultUnbanned);
-                            $manage->showUser($resultUnbanned);
-                            ?>
+                            <?php showUser(dbQuery('ntBanned', 'user')); ?>
                         </tbody>
                       </table>
 
@@ -86,9 +78,7 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
                             </tr>
                           </thead>
                           <tbody>
-                            <?php $manage = new Manage($resultBanned);
-                                  $manage->showUser($resultBanned);
-                           ?>
+                            <?php showUser(dbQuery('isBanned', 'user'));?>
                           </tbody>
                         </table>
 
@@ -114,9 +104,7 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
                           </tr>
                         </thead>
                         <tbody>
-                          <?php $manage = new Manage($resultUnbannedDriver);
-                                $manage->showDriver($resultUnbannedDriver);
-                          ?>
+                          <?php showDriver(dbQuery('ntBanned', 'driver')); ?>
                         </tbody>
                       </table>
 
@@ -142,9 +130,7 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
                           </tr>
                         </thead>
                         <tbody>
-                          <?php $manage = new Manage($resultBannedDriver);
-                                $manage->showDriver($resultBannedDriver);
-                          ?>
+                          <?php showDriver(dbQuery('isBanned', 'driver'))?>
                         </tbody>
                       </table>
 
@@ -159,9 +145,10 @@ $resultBannedDriver = $db->query("SELECT id,mail,pseudo,age,gender,isBanned FROM
     </div>
   </div>
 </div>
-  <script src="manage.js"></script>
-  <script src="search.js"></script>
-  <script src="modal.js"></script>
+<script src="modify.js"></script>
+<script src="manage.js"></script>
+<script src="search.js"></script>
+<script src="modal.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
