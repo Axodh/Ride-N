@@ -70,7 +70,7 @@ function showUser($result){
                       <input name="surname" type="text" value="'.$member->zipCode.'"/>
                       <p>Number</p>
                       <input name="surname" type="text" value="'.$member->numberUser.'"/>
-                      <div class="modal-footer"> <button type="submit" class="btn btn-primary" onclick="modify(\''.$user.'\',\''.$member->mailUser.'\',\''.$member->nameUser.'\',\''.$member->surnameUser.'\',\''.$member->addressUser.'\',\''.$member->cityUser.'\',\''.$member->zipCode.'\',\''.$member->numberUser.'\')">Save changes</button> <button type="button" onclick="closeModal(\''.$member->mailUser.'\')" class="btn btn-secondary" data-dismiss="modal">Close</button> </div>
+                      <div class="modal-footer"> <button type="submit" class="btn btn-primary" onclick="modify(\''.$user.'\',\''.$member->mailUser.'\',\''.$member->nameUser.'\',\''.$member->surnameUser.'\',\''.$member->addressUser.'\',\''.$member->cityUser.'\',\''.$member->zipCode.'\',\''.$member->numberUser.'\',)">Save changes</button> <button type="button" onclick="closeModal(\''.$member->mailUser.'\')" class="btn btn-secondary" data-dismiss="modal">Close</button> </div>
                     </form>
                     </div>
                 </div>
