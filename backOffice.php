@@ -6,9 +6,18 @@ require_once "navbar.php";
 
 ?>
 
-
-<div class="py-5">
   <div class="container">
+    <nav>
+        <div class="nav-wrapper teal">
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+        </div>
+      </nav>
     <div class="row">
       <div class="col-md-12">
         <form class="form-inline">
@@ -29,132 +38,82 @@ require_once "navbar.php";
             </form>
           </div>
         </form>
-        <div id = "display"></div>
-        <ul class="nav nav-tabs">
-          <li class="nav-item"> <a href="" class="active nav-link" data-toggle="tab" data-target="#tabone">Client Manager</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="" data-toggle="tab" data-target="#tabtwo">Banned Client</a> </li>
-          <li class="nav-item"> <a href="" class="nav-link" data-toggle="tab" data-target="#tabthree">Driver Manager</a> </li>
-          <li class="nav-item"> <a href="" class="nav-link" data-toggle="tab" data-target="#tabfour">Banned Driver</a> </li>
-        </ul>
-        <div class="tab-content mt-2">
-          <div class="tab-pane fade show active" id="tabone" role="tabpanel">
-            <div class="py-5">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="table-responsive">
-                      <table class="table table-striped table-borderless">
-                        <thead>
-                          <tr>
-                            <th scope="col">Mail</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                            <?php showUser(dbQuery('ntBanned', 'user')); ?>
-                        </tbody>
-                      </table>
+        <div class="row">
+           <div class="col s12">
+             <ul class="tabs teal accent-3">
+               <li class="tab col s3"><a class="active white-text" href="#test1">Client Manager</a></li>
+               <li class="tab col s3"><a class="white-text" href="#test2">Banned Client</a></li>
+               <li class="tab col s3"><a class="white-text" href="#test3">Driver Manager</a></li>
+               <li class="tab col s3"><a class="white-text" href="#test4">Banned Driver</a></li>
+             </ul>
+           </div>
+           <div id="test1" class="col s12">
+             <table class="striped center light-blue lighten-2">
+               <thead>
+                 <tr>
+                   <th>Mail</th>
+                   <th>First</th>
+                   <th>Last</th>
+                 </tr>
+               </thead>
+               <tbody>
+                   <?php showUser(dbQuery('ntBanned', 'user')); ?>
+               </tbody>
+             </table>
+           </div>
+           <div id="test2" class="col s12">
+             <table class="table table-striped table-borderless">
+               <thead>
+                 <tr>
+                   <th scope="col">Mail</th>
+                   <th scope="col">First</th>
+                   <th scope="col">Last</th>
+                   <th scope="col">Gender</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <?php showUser(dbQuery('isBanned', 'user'));?>
+               </tbody>
+             </table>
+           </div>
+           <div id="test3" class="col s12">
+             <table class="table table-striped table-borderless">
+               <thead>
+                 <tr>
+                   <th scope="col">Mail</th>
+                   <th scope="col">First</th>
+                   <th scope="col">Last</th>
+                   <th scope="col">Gender</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <?php showDriver(dbQuery('ntBanned', 'driver')); ?>
+               </tbody>
+             </table>
+           </div>
+           <div id="test4" class="col s12">
+             <table class="table table-striped table-borderless">
+               <thead>
+                 <tr>
+                   <th scope="col">Mail</th>
+                   <th scope="col">First</th>
+                   <th scope="col">Last</th>
+                   <th scope="col">Gender</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <?php showDriver(dbQuery('isBanned', 'driver'))?>
+               </tbody>
+             </table>
+           </div>
+         </div>
 
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="tabtwo" role="tabpanel">
-              <div class="py-5">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="table-responsive">
-                        <table class="table table-striped table-borderless">
-                          <thead>
-                            <tr>
-                              <th scope="col">Mail</th>
-                              <th scope="col">First</th>
-                              <th scope="col">Last</th>
-                              <th scope="col">Gender</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <?php showUser(dbQuery('isBanned', 'user'));?>
-                          </tbody>
-                        </table>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="tabs.js"></script>
+  <script src="modify.js"></script>
+  <script src="manage.js"></script>
+  <script src="search.js"></script>
+  <script src="modal.js"></script>
 
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="tab-pane fade" id="tabthree" role="tabpanel">
-            <div class="py-5">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="table-responsive">
-                      <table class="table table-striped table-borderless">
-                        <thead>
-                          <tr>
-                            <th scope="col">Mail</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Gender</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <?php showDriver(dbQuery('ntBanned', 'driver')); ?>
-                        </tbody>
-                      </table>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="tabfour" role="tabpanel">
-            <div class="py-5">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="table-responsive">
-                      <table class="table table-striped table-borderless">
-                        <thead>
-                          <tr>
-                            <th scope="col">Mail</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Gender</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <?php showDriver(dbQuery('isBanned', 'driver'))?>
-                        </tbody>
-                      </table>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<script src="modify.js"></script>
-<script src="manage.js"></script>
-<script src="search.js"></script>
-<script src="modal.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
-
 </html>

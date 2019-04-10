@@ -1,5 +1,3 @@
-<?php require "header.php" ?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,4 +25,22 @@
           </div>
         </div>
       </nav>
+      <div class="row">
+        <div class="col s1">
+          <div class="row">
+            <a href="index.php" class="brand-logo center">Ride'N</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="sass.html">Prices</a></li>
+              <li><a href="register.php">Register</a></li>
+              <li><a href="logIn.php">Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </header>
+
+    <main>
+    </main>
+
+
+<?php require_once "footer.php" ?>
