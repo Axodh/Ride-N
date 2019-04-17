@@ -1,0 +1,138 @@
+Paris :
+conf t
+
+crypto isakmp enable
+crypto isakmp policy 10
+encryption aes 256
+authentication pre-share
+hash sha
+group 2
+lifetime 86400
+crypto isakmp key 0 mypresharedkey address 200.0.10.2
+crypto isakmp key 0 mypresharedkey address 200.0.20.2
+crypto isakmp key 0 mypresharedkey address 200.0.30.2
+crypto isakmp keepalive 10 2 periodic
+
+crypto ipsec transform-set myset esp-aes 256 esp-sha-hmac
+mode tunnel
+
+ip access-list ext 101
+deny ip 192.168.0.0 0.0.255.255 192.168.0.0 0.0.255.255
+permit ip 192.168.0.0 0.0.255.255 any
+
+crypto map paris-to-all 10 ipsec-isakmp
+set peer 200.0.10.2
+set transform-set myset
+match address 101
+crypto map paris-to-all 20 ipsec-isakmp
+set peer 200.0.20.2
+set transform-set myset
+match address 101
+crypto map paris-to-all 30 ipsec-isakmp
+set peer 200.0.30.2
+set transform-set myset
+match address 101
+
+int s1/0
+description paris-to-all
+no ip route-cache cef
+crypto map paris-to-all
+
+end
+wr
+
+
+Toulouse :
+conf t
+
+crypto isakmp enable
+crypto isakmp policy 10
+encryption aes 256
+authentication pre-share
+hash sha
+group 2
+lifetime 86400
+crypto isakmp key 0 mypresharedkey address 200.0.0.2
+crypto isakmp keepalive 10 2 periodic
+
+crypto ipsec transform-set myset esp-aes 256 esp-sha-hmac
+mode tunnel
+
+access-list 101 permit ip 192.168.10.0 0.0.0.255 any
+
+crypto map toul-to-paris 10 ipsec-isakmp
+set peer 200.0.0.2
+set transform-set myset
+match address 101
+
+int s1/0
+description toul-to-paris
+no ip route-cache cef
+crypto map toul-to-paris
+
+end
+wr
+
+
+Lyon :
+conf t
+
+crypto isakmp enable
+crypto isakmp policy 10
+encryption aes 256
+authentication pre-share
+hash sha
+group 2
+lifetime 86400
+crypto isakmp key 0 mypresharedkey address 200.0.0.2
+crypto isakmp keepalive 10 2 periodic
+
+crypto ipsec transform-set myset esp-aes 256 esp-sha-hmac
+mode tunnel
+
+access-list 101 permit ip 192.168.20.0 0.0.0.255 any
+
+crypto map lyon-to-paris 10 ipsec-isakmp
+set peer 200.0.0.2
+set transform-set myset
+match address 101
+
+int s1/0
+description lyon-to-paris
+no ip route-cache cef
+crypto map lyon-to-paris
+
+end
+wr
+
+
+Marseille :
+conf t
+
+crypto isakmp enable
+crypto isakmp policy 10
+encryption aes 256
+authentication pre-share
+hash sha
+group 2
+lifetime 86400
+crypto isakmp key 0 mypresharedkey address 200.0.0.2
+crypto isakmp keepalive 10 2 periodic
+
+crypto ipsec transform-set myset esp-aes 256 esp-sha-hmac
+mode tunnel
+
+access-list 101 permit ip 192.168.30.0 0.0.0.255 200.0.0.0 0.0.0.255
+
+crypto map mars-to-paris 10 ipsec-isakmp
+set peer 200.0.0.2
+set transform-set myset
+match address 101
+
+int s1/0
+description mars-to-paris
+no ip route-cache cef
+crypto map mars-to-paris
+
+end
+wr

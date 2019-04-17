@@ -1,0 +1,38 @@
+cygwin warning:
+  MS-DOS style path detected: C:\Users\User\Documents\ESGI\2e Ann\xC3\xA9e 2nd Semestre\PROJET ANNUEL\RIDE 'N GNS3\ReseauRideN\project-files\dynamips
+  Preferred POSIX equivalent is: /cygdrive/c/Users/User/Documents/ESGI/2e Ann\xC3\xA9e 2nd Semestre/PROJET ANNUEL/RIDE 'N GNS3/ReseauRideN/project-files/dynamips
+  CYGWIN environment variable option "nodosfilewarning" turns off this warning.
+  Consult the user's guide for more details about POSIX paths:
+    http://cygwin.com/cygwin-ug-net/using.html#using-pathnames
+VM: Unable to store instance 'Ghost' in registry!
+VM Ghost: unable to create instance!
+registry_delete_type: object "R1" (type 0) still referenced (count=12)
+registry_delete_type: object "udp-921c1a3c-1e33-4c86-9d47-f24ce14fd6bb" (type 1) still referenced (count=1)
+registry_delete_type: object "udp-5fdf4a0d-d2f1-4e96-a7a7-717cb5b749bd" (type 1) still referenced (count=1)
+registry_delete_type: object "udp-6ce266d2-a985-44c8-a2be-6dcef2885250" (type 1) still referenced (count=1)
+registry_delete_type: object "udp-335cd84f-be38-4904-9f42-9dfa7b904e74" (type 1) still referenced (count=1)
+Cisco Router Simulation Platform (version 0.2.17-x86/Windows stable)
+Copyright (c) 2005-2011 Christophe Fillot.
+Build date: Aug 28 2017 08:26:42
+
+Log file: writing to dynamips_i2_log.txt
+Hypervisor TCP control server started (IP 127.0.0.1 port 64868).
+error = 2
+CPU0: carved JIT exec zone of 64 Mb into 2048 pages of 32 Kb.
+NVRAM is empty, setting config register to 0x2142
+C3745 instance 'R1' (id 1):
+  VM Status  : 0
+  RAM size   : 256 Mb
+  NVRAM size : 256 Kb
+  IOS image  : C:/Users/User/GNS3/images/IOS/c3745-adventerprisek9_ivs-mz.124-15.T8.image
+
+Loading ELF file 'C:/Users/User/GNS3/images/IOS/c3745-adventerprisek9_ivs-mz.124-15.T8.image'...
+ELF entry point: 0x80008000
+
+C3745 'R1': starting simulation (CPU0 PC=0xffffffffbfc00000), JIT enabled.
+
+C3745 'R1': stopping simulation.
+Hypervisor: closing control sockets.
+Hypervisor: closing remote client connections.
+Shutdown in progress...
+Shutdown completed.
