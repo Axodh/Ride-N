@@ -1,96 +1,102 @@
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    mapTypeControl: false,
+    center: {lat: 48.87905, lng: 2.29232},
+    zoom: 10
+  });
 
-// This sample uses the Autocomplete widget to help the user select a
-// place, then it retrieves the address components associated with that
-// place, and then it populates the form fields with those details.
-// This sample requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
+  new AutocompleteDirectionsHandler(map);
+}
 
+/**
+ * @constructor
+ */
+function AutocompleteDirectionsHandler(map) {
+  this.map = map;
+  this.originPlaceId = null;
+  this.destinationPlaceId = null;
+  this.travelMode = 'WALKING';
+  this.directionsService = new google.maps.DirectionsService;
+  this.directionsDisplay = new google.maps.DirectionsRenderer;
+  this.directionsDisplay.setMap(map);
 
-var placeSearch, autocomplete, autocomplete2;
+  var originInput = document.getElementById('origin-input');
+  var destinationInput = document.getElementById('destination-input');
+  var modeSelector = document.getElementById('mode-selector');
 
-var componentForm = {
-street_number: 'short_name',
-route: 'long_name',
-locality: 'long_name',
-administrative_area_level_1: 'short_name',
-country: 'long_name',
-postal_code: 'short_name'
+  var originAutocomplete = new google.maps.places.Autocomplete(originInput);
+  // Specify just the place data fields that you need.
+  originAutocomplete.setFields(['place_id']);
+
+  var destinationAutocomplete =
+      new google.maps.places.Autocomplete(destinationInput);
+  // Specify just the place data fields that you need.
+  destinationAutocomplete.setFields(['place_id']);
+
+  this.setupClickListener('changemode-walking', 'WALKING');
+  this.setupClickListener('changemode-transit', 'TRANSIT');
+  this.setupClickListener('changemode-driving', 'DRIVING');
+
+  this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+  this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+
+  this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+  this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(
+      destinationInput);
+  this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
+}
+
+// Sets a listener on a radio button to change the filter type on Places
+// Autocomplete.
+AutocompleteDirectionsHandler.prototype.setupClickListener = function(
+    id, mode) {
+  var radioButton = document.getElementById(id);
+  var me = this;
+
+  radioButton.addEventListener('click', function() {
+    me.travelMode = mode;
+    me.route();
+  });
 };
 
-function initAutocomplete() {
-// Create the autocomplete object, restricting the search predictions to
-// geographical location types.
+AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
+    autocomplete, mode) {
+  var me = this;
+  autocomplete.bindTo('bounds', this.map);
 
-autocomplete = new google.maps.places.Autocomplete(
-  document.getElementById('autocomplete'), {
-      types: ['geocode'],
-      componentRestrictions: {country: "fr"}
-  });
-// Avoid paying for data that you don't need by restricting the set of
-// place fields that are returned to just the address components.
+  autocomplete.addListener('place_changed', function() {
+    var place = autocomplete.getPlace();
 
-// autocomplete.setFields('address_components');
-
-// When the user selects an address from the drop-down, populate the
-// address fields in the form.
-autocomplete.addListener('place_changed', fillInAddress);
-
-autocomplete2 = new google.maps.places.Autocomplete(
-  document.getElementById('autocomplete2'), {
-      types: ['geocode'],
-      componentRestrictions: {country: "fr"}
-  });
-  // Avoid paying for data that you don't need by restricting the set of
-  // place fields that are returned to just the address components.
-
-  // autocomplete.setFields('address_components');
-
-  // When the user selects an address from the drop-down, populate the
-  // address fields in the form.
-  autocomplete2.addListener('place_changed', fillInAddress);
-}
-
-
-function fillInAddress() {
-// Get the place details from the autocomplete object.
-var place = autocomplete.getPlace();
-var place2 = autocomplete2.getPlace();
-
-/*
-for (var component in componentForm) {
-document.getElementById(component).value = '';
-document.getElementById(component).disabled = false;
-}
-*/
-
-// Get each component of the address from the place details,
-// and then fill-in the corresponding field on the form.
-    for (var i = 0; i < place.address_components.length; i++) {
-    var addressType = place.address_components[i].types[0];
-    if (componentForm[addressType]) {
-      var val = place.address_components[i][componentForm[addressType]];
-      // document.getElementById(addressType).value = val;
+    if (!place.place_id) {
+      window.alert('Please select an option from the dropdown list.');
+      return;
     }
-  }
-}
-function geolocate() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var geolocation = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      var circle = new google.maps.Circle(
-          {center: geolocation, radius: position.coords.accuracy});
-      autocomplete.setBounds(circle.getBounds());
-    });
-  }
-}
+    if (mode === 'ORIG') {
+      me.originPlaceId = place.place_id;
+    } else {
+      me.destinationPlaceId = place.place_id;
+    }
+    me.route();
+  });
+};
 
-function calculate(){
-  var start = document.getElementById("autocomplete");
-  var arrival = document.getElementById("autocomplete2");
+AutocompleteDirectionsHandler.prototype.route = function() {
+  if (!this.originPlaceId || !this.destinationPlaceId) {
+    return;
+  }
+  var me = this;
 
-  var sendGgl = document.createElement("src");
-  
-}
+  this.directionsService.route(
+      {
+        origin: {'placeId': this.originPlaceId},
+        destination: {'placeId': this.destinationPlaceId},
+        travelMode: this.travelMode
+      },
+      function(response, status) {
+        if (status === 'OK') {
+          me.directionsDisplay.setDirections(response);
+        } else {
+          window.alert('Directions request failed due to ' + status);
+        }
+      });
+};

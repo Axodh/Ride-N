@@ -2,6 +2,7 @@
   require "navbar.php";
 
 ?>
+<main>
   <div class="py-5 text-center">
     <div class="container h-75">
       <div class="row mt-5" style="">
@@ -45,6 +46,7 @@
                 echo "</ul>";
               }
             ?>
+
             <div class="form-group"> <input type="email" class="form-control" placeholder="Enter email" id="form9" name="mailUser"> </div>
             <div class="form-group mb-3"> <input type="password" class="form-control" placeholder="Password" id="form10" name="pwd"> <small class="form-text text-muted text-right">
                 <a href="#"> Recover password</a>
@@ -54,5 +56,6 @@
       </div>
     </div>
   </div>
+</main>
 
 <?php require "footer.php" ?>
