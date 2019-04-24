@@ -1,24 +1,24 @@
 <?php
 
-class DatabaseManager{
+class Database{
 
   private $pdo;
   private static $manager;
 
   private function __construct(){
-    $this->pdo = new PDO("mysql:host;dbname=riden", "root", "");
+    $this->pdo = new PDO("mysql:host=localhost;dbname=riden", "root", "");
   }
 
-  public static function getManager(): DatabaseManager{
+  public static function getManager(): Database{
     if(!isset(self::$manager)){
-      self::manager = new DatabaseManager();
+      self::$manager = new Database();
     }
-    return self:$manager;
+    return self::$manager;
   }
 
   private function internalExec(string $sql, array $params = []): ? PDOStatement{
     $statement = $this->pdo->prepare($sql);
-    if($statement ! == false){
+    if($statement !== false){
       if($statement->execute($params)){
         return $statement;
       }

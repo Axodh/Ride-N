@@ -1,6 +1,6 @@
 <?php
 ini_set("display_errors", 1);
-require_once "Database.php";
+require_once "utils/databases/Database.php";
 require_once "manage.php";
 require_once "navbar.php";
 
