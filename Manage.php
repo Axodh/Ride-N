@@ -1,31 +1,21 @@
-<?php
-require_once "Database.php";
+<?php require_once "Database.php";
 
 function dbQuery($ban, $table){
-  $db = new Database("riden","localhost","root","");
-  if($ban == 'ntBanned' && $table == 'user'){
-    $result = $db->query("SELECT idUser,mailUser,nameUser,surnameUser,isBanned,addressUser,cityUser,zipCode,numberUser FROM user WHERE isBanned = 0");
-  }else if($ban == 'isBanned' && $table == 'user'){
-    $result = $db->query("SELECT idUser,mailUser,nameUser,surnameUser,isBanned,addressUser,cityUser,zipCode,numberUser FROM user WHERE isBanned = 1");
-  }
-  if($ban == 'ntBanned' && $table == 'driver'){
-    $result = $db->query("SELECT idDriver,mailDriver,nameDriver,lastNameDriver,addr,'number',age,license,isBanned FROM driver WHERE isBanned = 0");
-  }else if($ban == 'isBanned' && $table == 'driver'){
-    $result = $db->query("SELECT idDriver,mailDriver,nameDriver,lastNameDriver,addr,'number',age,license,isBanned FROM driver WHERE isBanned = 1");
-  }
-
-  return $result;
+    $db = new Database("riden","localhost","root","");
+    if($ban == 'ntBanned' && $table == 'user'){ $result = $db->query("SELECT idUser,mailUser,nameUser,surnameUser,isBanned,addressUser,cityUser,zipCode,numberUser FROM user WHERE isBanned = 0"); }
+    else if($ban == 'isBanned' && $table == 'user'){ $result = $db->query("SELECT idUser,mailUser,nameUser,surnameUser,isBanned,addressUser,cityUser,zipCode,numberUser FROM user WHERE isBanned = 1"); }
+    if($ban == 'ntBanned' && $table == 'driver'){ $result = $db->query("SELECT idDriver,mailDriver,nameDriver,lastNameDriver,addr,'number',age,license,isBanned FROM driver WHERE isBanned = 0"); }
+    else if($ban == 'isBanned' && $table == 'driver'){ $result = $db->query("SELECT idDriver,mailDriver,nameDriver,lastNameDriver,addr,'number',age,license,isBanned FROM driver WHERE isBanned = 1"); }
+    return $result;
 }
 
 
 function showUser($result){
+    $user = 'user';
 
-  $user = 'user';
-
-  foreach ($result as $member){
-  //  <td><button onclick="ban(\''.$member->mail.'\',\''.$member->pseudo.'\',\''.$member->age.'\',\''.$member->gender.'\',\''.$member->isBanned.'\')" type="button" class="btn btn-danger">Ban</button></td>
-     echo'
-     <tr>
+    foreach ($result as $member){
+        echo '
+    <tr>
      <form method="POST" action="">
        <td>'.$member->mailUser.'</td>
        <input name="mail" value="'.$member->mailUser.'" type="hidden"/>
@@ -81,14 +71,14 @@ function showUser($result){
        </td>
      </tr>
      ';
-   }
+    }
 }
 
 function showDriver($result){
-  $driver = 'driver';
+    $driver = 'driver';
 
     foreach ($result as $member):
-     echo'
+        echo'
      <tr>
      <form method="POST" action="">
        <td>'.$member->mailDriver.'</td>

@@ -1,8 +1,8 @@
 <?php
 ini_set("display_errors", 1);
-require_once "Manage.php";
+require_once "manage.php";
 require_once "Database.php";
-$db = new Database("viaxe","localhost","root","");
+$db = new Database("riden","localhost","root","");
 
 if($_POST['table'] == 'user'){
   $modify = $db->queryModify("UPDATE user SET mailUser = :mailUser,

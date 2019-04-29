@@ -1,18 +1,13 @@
-<?php include "navbar.php"
-?>
-  <div class="py-5">
+<?php $pageTitle =  "Accueil"; require_once "navbar.php" ?>
+<main>
     <div class="container">
-      <div class="row">
-        <div class="text-center col-md-8 mx-auto">
-          <h1 class="mb-3">I enjoy with my whole heart</h1>
-          <p class="lead mb-0">I am alone, and feel the charm of existence in this spot.</p> <a class="btn btn-link m-3" href="#">Read more</a> <a class="btn btn-primary m-3" href="#">Buy now</a>
+        <div class="row">
+            <div class="col s12 m6 offset-m3 center">
+                <br><h3 class="center white-text">Ride'N</h3>
+                <h3 class="center white-text hide-on-med-and-down">Ça passe crème.</h3>
+                <a hrefclass="btn-flat center white-text">COMMENCER</a>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 p-0"> <img class="img-fluid d-block" src="https://static.pingendo.com/cover-bubble-dark.svg" width="1500"> </div>
-      </div>
     </div>
-  </div>
+</main>
 <?php require_once "footer.php"; ?>
-
-</html>
