@@ -35,4 +35,22 @@ class PrestataireService {
     $manager = Database::getManager();
     return $manager->getAll('SELECT * FROM Prestataire');
   }
+
+  public function updatePrestataire(Prestataire $prestataire): ?Prestataire{
+    $manager = Database::getManager();
+    $success = $manager->exec('UPDATE Prestataire SET profession = ?, name = ?, surname = ?, date = ?, heure = ?, price = ? WHERE id = ?',
+    [
+      $prestataire->getProfession(),
+      $prestataire->getName(),
+      $prestataire->getSurname(),
+      $prestataire->getDate(),
+      $prestataire->getHeure(),
+      $prestataire->getPrice(),
+      $prestataire->getId()
+    ]);
+    if($success >  0){
+      return $prestataire;
+    }
+    return NULL;
+  }
 }

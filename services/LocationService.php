@@ -35,15 +35,14 @@ class LocationService {
 
   public function updateLocation(Location $location): ?Location{
     $manager = Database::getManager();
-    $succes = $manager->exec('UPDATE location SET name = ?, isRent = ?, price = ? WHERE id = ?',
+    $success = $manager->exec('UPDATE location SET name = ?, isRent = ?, price = ? WHERE id = ?',
     [
       $location->getName(),
       $location->getRent(),
       $location->getPrice(),
       $location->getId()
-
     ]);
-    if($succes > 0){
+    if($success > 0){
       return $location;
     }
     return NULL;
