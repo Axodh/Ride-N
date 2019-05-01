@@ -33,20 +33,4 @@ class RepasService {
     $manager = Database::getManager();
     return $manager->getAll('SELECT * FROM Repas');
   }
-
-  public function updateRepas(Repas $repas): ?Repas{
-    $manager = Database::getManager();
-    $success = $manager->exec('UPDATE Repas SET name = ?, boisson = ?, restaurant = ?, price = ? WHERE id = ?',
-    [
-      $repas->getName(),
-      $repas->getBoisson(),
-      $repas->getRestaurant(),
-      $repas->getPrice(),
-      $repas->getId()
-    ]);
-    if($success > 0){
-      return $repas;
-    }
-    return NULL;
-  }
 }

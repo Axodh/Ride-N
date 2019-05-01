@@ -31,24 +31,6 @@ class PetsService {
     return NULL;
   }
 
-  public function updatePets(Pets $pets): ?Pets{
-    $manager = Database::getManager();
-    $success = $manager->exec('UPDATE Pets SET name = ?, date = ?, heure = ?, departure = ?, arrival = ?, price = ? WHERE id = ?',
-    [
-      $pets->getName(),
-      $pets->getDate(),
-      $pets->getHeure(),
-      $pets->getDeparture(),
-      $pets->getArrival(),
-      $pets->getPrice(),
-      $pets->getId()
-    ]);
-    if($success > 0){
-      return $pets;
-    }
-    return NULL;
-  }
-
   public function allPets(): array {
     $manager = Database::getManager();
     return $manager->getAll('SELECT * FROM Pets');

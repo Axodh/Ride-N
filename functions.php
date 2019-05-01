@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "conf.inc.php";
+require_once "langChange.php";
 
 function connectDb(){
     try{ $db = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME ,DB_USER , DB_PWD); }

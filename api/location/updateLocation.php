@@ -18,7 +18,7 @@ if(Validator::validate($json, ['id', 'name', 'isRent', 'price'])){
 $new = LocationService::getInstance()->updateLocation($location);
 if($new) {
     http_response_code(201);
-    echo json_encode($new);
+    echo json_decode($new);
   } else {
     http_response_code(500); // fail :(
   }

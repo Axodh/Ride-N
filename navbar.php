@@ -18,7 +18,7 @@
                 <div class="col s4 l8 center smol">
                     <a href="subscribe.php" class="pad">abonnements</a>
                     <a href="services.php" class="pad">services</a>
-                    <a href="#" class="pad">demo</a>
+                    <a href="Ridegl/index.php" class="pad">demo</a>
                 </div>
                 <div class="col s4 l2 center smol">
                     <?php if(!isConnected()){
