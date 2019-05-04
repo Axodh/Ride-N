@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col s12 center smol">
-                <a href="#" class="white-text pad">stuff</a>
-                <a href="#" class="white-text pad">team</a>
-                <a href="terms.php" class="white-text pad">terms</a>
-                <a href="lang.php" class="white-text pad">lang</a>
+                <a href="#" class="white-text pad"><?php echo $GLOBALS['FOOTER_STUFF'] ?></a>
+                <a href="#" class="white-text pad"><?php echo $GLOBALS['FOOTER_TEAM'] ?></a>
+                <a href="terms.php" class="white-text pad"><?php echo $GLOBALS['FOOTER_TERMS'] ?></a>
+                <a href="lang.php" class="white-text pad"><?php echo $GLOBALS['FOOTER_LANG'] ?></a>
             </div>
         </div>
     </div>

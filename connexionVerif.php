@@ -3,11 +3,10 @@
 $error = false;
 $submitForm = [];
 
-
-$account = $db->prepare("SELECT surnameUser, pwd, isDeleted FROM user WHERE mailUser = :mailUser");
+$account = $db->prepare("SELECT surnameUser, pwd, isBanned FROM user WHERE mailUser = :mailUser");
 $account -> execute(["mailUser"=>$_POST["mailUser"]]);
 $pwdv = $account->fetch();
-if(!$pwdv["isDeleted"]){
+if(!$pwdv["isBanned"]){
     if(!empty($account)){
         if(password_verify($_POST["pwd"], $pwdv['pwd'])){
             $_SESSION["mailUser"] = $_POST["mailUser"];
