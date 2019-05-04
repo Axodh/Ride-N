@@ -11,10 +11,7 @@
             <input id="destination-input" class="controls col s4" type="text"
                    placeholder="Enter a destination location">
 
-
-
-
-            <div id="mode-selector col s2" class="controls" hidden>
+            <div id="mode-selector" class="controls" hidden>
                 <input type="radio" name="type" id="changemode-walking" checked="checked">
                 <label for="changemode-walking">Walking</label>
 
@@ -29,14 +26,15 @@
 
     <div class="container">
       <div class="row">
-        <div class="col s12">
-          <div class="card-panel">
-            <div class="row">
-              <div class="col s6" id="map">
-              </div>
-              <div class="col s6 card-panel teal">
-              </div>
-            </div>
+        <div class="col s6" id="map">
+
+        </div>
+        <div class="col s6">
+          <button class="btn waves-effect waves-light" onclick="getDestinations()" type="submit" name="action">Commander
+            <i class="material-icons right">send</i>
+          </button>
+          <div id="display">
+
           </div>
         </div>
       </div>
@@ -53,4 +51,4 @@
 </body>
 
 
-<?php require_once "footer.php" ?>
+  <?php require_once "footer.php" ?>

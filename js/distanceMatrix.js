@@ -7,7 +7,7 @@ function getDestinations(){
   request.onreadystatechange = function(){
     if(request.readyState == 4 && request.status == 200){
         document.getElementById("display").innerHTML = this.responseText;
-        console.log(arrival);
+        console.log(departure,arrival);
     }
   };
   request.open('POST', 'distanceMatrix.php');
