@@ -49,10 +49,10 @@ $GLOBALS['SUBSCRIBE_CARD_1_CONTENT'] = "<p>El precio se calcula por kilómetro (
 $GLOBALS['SUBSCRIBE_CARD_2_CONTENT'] = "<p>¡Únase a la comunidad Ride'N como miembro y obtenga tarifas preferenciales!</p>
                                         <div>
                                             <b>Hazte miembro sin compromiso:</b>
-                                            <li>22€ impuestos incluidos/mes</li><br>
+                                            <li>22€ (impuestos incluidos) / mes</li><br>
 
                                             <b>Hazte socio con un compromiso de 12 meses:</b>
-                                            <li>20€ impuestos incluidos/mes</li><br>
+                                            <li>20€ (impuestos incluidos) / mes</li><br>
 
                                             <b>Acceso a diferentes servicios con un compromiso de 12 meses:</b>
                                             <li>Servicios de comidas y bebidas</li>
@@ -65,12 +65,12 @@ $GLOBALS['SUBSCRIBE_CARD_2_CONTENT'] = "<p>¡Únase a la comunidad Ride'N como m
 $GLOBALS['SUBSCRIBE_CARD_3_CONTENT'] = "<p>¡Únase a la comunidad Ride'N como miembro corporativo y benefíciese de tarifas preferenciales !<br>¡Benefíciese del acceso privilegiado ilimitado los 7 días de la semana !</p>
                                         <div>
                                             <b>Conviértete en un miembro de la empresa sin compromiso :</b>
-                                            <li>80€ impuestos incluidos/mes para una empresa con menos de 10 empleados</li>
-                                            <li>100€ impuestos incluidos/mes para una empresa con más de 10 empleados + 15€ impuestos incluidos por 10 empleados</li><br>
+                                            <li>80 € (impuestos incluidos) / mes para una empresa con menos de 10 empleados</li>
+                                            <li>100€ (impuestos incluidos) / mes para una empresa con más de 10 empleados + 15€ impuestos incluidos por 10 empleados</li><br>
 
                                             <b>Devenir membre entreprise avec engagement sur 12 mois :</b>
-                                            <li>65€ impuestos incluidos/mes para una empresa con menos de 10 empleados</li>
-                                            <li>85€ impuestos incluidos/mes para una empresa con más de 10 empleados + 12€ impuestos incluidos por 10 empleados</li>
+                                            <li>65€ (impuestos incluidos) / mes para una empresa con menos de 10 empleados</li>
+                                            <li>85€ (impuestos incluidos) / mes para una empresa con más de 10 empleados + 12€ impuestos incluidos por 10 empleados</li>
                                         </div>";
 
 $GLOBALS['SAVE_BACK'] = "Por favor regrese a la página anterior.";

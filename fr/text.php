@@ -83,7 +83,6 @@ $GLOBALS['FOOTER_TEAM'] = "equipe";
 $GLOBALS['FOOTER_TERMS'] = "termes";
 $GLOBALS['FOOTER_LANG'] = "lang";
 
-
 $submitForm = [
     'error' =>  [
         1=>"Le nom doit faire entre 2 et 50 caractères.",
