@@ -2,6 +2,8 @@ function getDestinations(){
 
   var departure = document.getElementById('origin-input').value;
   var arrival = document.getElementById('destination-input').value;
+  var date = document.querySelector('.datepicker').value;
+  var time = document.querySelector('.timepicker').value;
 
   var request = new XMLHttpRequest();
   request.onreadystatechange = function(){
@@ -12,6 +14,6 @@ function getDestinations(){
   };
   request.open('POST', 'distanceMatrix.php');
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  request.send(`departure=${departure}&arrival=${arrival}`);
+  request.send(`departure=${departure}&arrival=${arrival}&date=${date}&time=${time}`);
 
 }

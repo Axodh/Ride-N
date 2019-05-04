@@ -11,7 +11,7 @@ $GLOBALS['LANG_ES'] = "Espagnol";
 $GLOBALS['NAV_SUBSCRIBE'] = "abonnements";
 $GLOBALS['NAV_SERVICES'] = "services";
 $GLOBALS['NAV_DEMO'] = "demo";
-
+$GLOBALS['NAV_HELLO'] = "hello";
 $GLOBALS['LOG_CHOICE_DRIVER'] = "je suis un Driver";
 $GLOBALS['LOG_CHOICE_USER'] = "je suis un User";
 
