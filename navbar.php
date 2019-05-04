@@ -1,6 +1,6 @@
 <?php require_once "functions.php"; ?>
 <head>
-    <title><?php echo $pageTitle ?></title>
+  <!--  <title> <//?php echo $pageTitle ?></title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->

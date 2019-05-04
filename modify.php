@@ -1,11 +1,12 @@
 <?php
 ini_set("display_errors", 1);
-require_once "manage.php";
+require_once "Manage.php";
 require_once "Database.php";
 $db = new Database("riden","localhost","root","");
 
-if($_POST['table'] == 'user'){
-  $modify = $db->queryModify("UPDATE user SET mailUser = :mailUser,
+
+if(trim($_POST["table"]) == "user"){
+  $modify = $db->queryModifyUser("UPDATE user SET mailUser = :mailUser,
                                               nameUser = :nameUser,
                                               surnameUser = :surnameUser,
                                               addressUser = :addressUser,
@@ -13,25 +14,28 @@ if($_POST['table'] == 'user'){
                                               zipCode = :zipCode,
                                               numberUser = :numberUser
                                               WHERE mailUser = :mailUser",
-                                              $_POST["mailUser"],
-                                              $_POST["nameUser"],
-                                              $_POST["surnameUser"],
-                                              $_POST["addressUser"],
-                                              $_POST["cityUser"],
-                                              $_POST["zipCode"],
-                                              $_POST["numberUser"]);
-}else if($_POST['table'] == 'driver'){
-  $modify = $db->queryModify("UPDATE driver SET mailDriver = :mailDriver,
+                                              trim($_POST["mailUser"]),
+                                              trim($_POST["nameUser"]),
+                                              trim($_POST["surnameUser"]),
+                                              trim($_POST["addressUser"]),
+                                              trim($_POST["cityUser"]),
+                                              trim($_POST["zipCode"]),
+                                              trim($_POST["numberUser"]),
+                                              trim($_POST["mailUser"]));
+
+}else if(trim($_POST['table']) == 'driver'){
+  $modify = $db->queryModifyDriver("UPDATE driver SET mailDriver = :mailDriver,
                                                 nameDriver = :nameDriver,
                                                 lastNameDriver = :lastNameDriver,
                                                 addr = :addr,
-                                                numberUser = :numberUser,
+                                                number = :number,
                                                 age = :age
                                                 WHERE mailDriver = :mailDriver",
-                                                $_POST["mailDriver"],
-                                                $_POST["nameDriver"],
-                                                $_POST["lastNameDriver"],
-                                                $_POST["addr"],
-                                                $_POST["number"],
-                                                $_POST["age"]);
+                                                trim($_POST["mailDriver"]),
+                                                trim($_POST["nameDriver"]),
+                                                trim($_POST["lastNameDriver"]),
+                                                trim($_POST["addr"]),
+                                                trim($_POST["number"]),
+                                                trim($_POST["age"]),
+                                                trim($_POST["mailDriver"]));
 }

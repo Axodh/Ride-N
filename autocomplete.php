@@ -5,11 +5,14 @@
 <main>
     <div class="container">
         <div class="row">
-            <input id="origin-input" class="controls col s6" type="text"
+            <input id="origin-input"  class="controls col s4" type="text"
                    placeholder="Enter an origin location">
 
-            <input id="destination-input" class="controls col s6" type="text"
+            <input id="destination-input" class="controls col s4" type="text"
                    placeholder="Enter a destination location">
+
+
+
 
             <div id="mode-selector col s2" class="controls" hidden>
                 <input type="radio" name="type" id="changemode-walking" checked="checked">
@@ -24,9 +27,25 @@
         </div>
     </div>
 
-    <div id="map" class="container"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="card-panel">
+            <div class="row">
+              <div class="col s6" id="map">
+              </div>
+              <div class="col s6 card-panel teal">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 </main>
+<script src="text.js"></script>
+<script src="js/distanceMatrix.js"></script>
 <script src="js/autocomplete.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR5zVA8SLCKglbDIfjmfCsFwWv4vMmpyo&libraries=places&callback=initMap" async defer></script>
 
