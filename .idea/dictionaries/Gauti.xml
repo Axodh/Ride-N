@@ -8,29 +8,46 @@
       <w>achat</w>
       <w>achats</w>
       <w>adresse</w>
+      <w>anglais</w>
       <w>appareils</w>
       <w>autre</w>
       <w>avec</w>
+      <w>avez</w>
       <w>backoffice</w>
       <w>boisson</w>
       <w>bonjour</w>
       <w>bouteille</w>
       <w>camaro</w>
       <w>chambre</w>
+      <w>chillin</w>
       <w>choix</w>
       <w>coachs</w>
       <w>collada</w>
       <w>confirmer</w>
+      <w>connecter</w>
+      <w>connectez</w>
       <w>connecté</w>
       <w>consulter</w>
       <w>crème</w>
       <w>dbname</w>
       <w>deconnexion</w>
       <w>demi</w>
+      <w>devient</w>
+      <w>données</w>
       <w>drapeau</w>
+      <w>déconnecter</w>
       <w>elems</w>
+      <w>enregistrement</w>
+      <w>enregistrez</w>
       <w>entreprise</w>
+      <w>envoyé</w>
+      <w>equipe</w>
+      <w>erreur</w>
+      <w>erreurs</w>
+      <w>espagnol</w>
       <w>estimé</w>
+      <w>formulaire</w>
+      <w>français</w>
       <w>gastronomique</w>
       <w>heure</w>
       <w>hoverable</w>
@@ -39,9 +56,12 @@
       <w>interprètes</w>
       <w>jour</w>
       <w>kilomètre</w>
+      <w>langue</w>
       <w>licensable</w>
       <w>licensors</w>
+      <w>logchoice</w>
       <w>modif</w>
+      <w>multilingue</w>
       <w>navbar</w>
       <w>nuit</w>
       <w>numériques</w>
@@ -51,11 +71,18 @@
       <w>parmi</w>
       <w>personne</w>
       <w>petit</w>
+      <w>prend</w>
       <w>prix</w>
+      <w>précédente</w>
       <w>prénom</w>
       <w>préparation</w>
       <w>pwdv</w>
+      <w>rempli</w>
       <w>repas</w>
+      <w>reprend</w>
+      <w>resultat</w>
+      <w>retour</w>
+      <w>revenir</w>
       <w>ridegl</w>
       <w>riden</w>
       <w>réservation</w>
@@ -64,18 +91,27 @@
       <w>smol</w>
       <w>sportif</w>
       <w>sublicensing</w>
+      <w>succes</w>
+      <w>succès</w>
+      <w>suis</w>
+      <w>supprime</w>
       <w>tablette</w>
       <w>tarifs</w>
+      <w>termes</w>
       <w>touristiques</w>
+      <w>tous</w>
       <w>téléphone</w>
       <w>valables</w>
       <w>valign</w>
       <w>verif</w>
+      <w>veuillez</w>
+      <w>vide</w>
       <w>visite</w>
       <w>visites</w>
       <w>vous</w>
       <w>vétérinaire</w>
       <w>webpage</w>
+      <w>équipe</w>
       <w>êtes</w>
     </words>
   </dictionary>

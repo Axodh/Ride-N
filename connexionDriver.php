@@ -3,15 +3,14 @@
 $error = false;
 $submitForm = [];
 
-
-$account = $db->prepare("SELECT pwd, isDeleted FROM user WHERE mailUser = :mailUser");
-$account -> execute(["mailUser"=>$_POST["mailUser"]]);
+$account = $db->prepare("SELECT surnameDriver pwd, isBanned FROM driver WHERE mailDriver = :mailDriver");
+$account -> execute(["mailDriver"=>$_POST["mailDriver"]]);
 $pwdv = $account->fetch();
-if(!$pwdv["isDeleted"]){
+if(!$pwdv["isBanned"]){
     if(!empty($account)){
         if(password_verify($_POST["pwd"], $pwdv['pwd'])){
-            $_SESSION["mailUser"] = $_POST["mailUser"];
-            $_SESSION["surnameUser"] = $_POST["surnameUser"];
+            $_SESSION["mailUser"] = $_POST["mailDriver"];
+            $_SESSION["surnameUser"] = $pwdv["surnameDriver"];
             header("Location: index.php");
         }else{
             $error = true;
@@ -27,5 +26,5 @@ else{
 if($error){
     $_SESSION["dataForm"] = $_POST;
     $_SESSION["errors_form"] = $submitForm['error'];
-    header("Location: logIn.php");
+    header("Location: logInDriver.php");
 }

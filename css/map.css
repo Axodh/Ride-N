@@ -1,7 +1,13 @@
 #map {
+<<<<<<< HEAD
   height:75%;
   width: 50%;
 
+=======
+  height:80%;
+  margin: 20px;
+  margin-top: 20px;
+>>>>>>> 830d66a423de04c9fbd560d46acf184bdf6c8afc
 }
 html, body {
      height: 100%;

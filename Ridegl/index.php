@@ -10,12 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
         <?php require_once "../css/ridenCss.php" ?>
-        body { background-color: #d7cbb0 }
+        body { background-color: #fbebce }
     </style>
 </head>
 
 <body>
-
 <script src="Js/three.js"></script>
 <script src="Js/OrbitControls.js"></script>
 <script src="Js/functions.js"></script>
@@ -23,7 +22,6 @@
 <script src="Js/WebGL.js"></script>
 <script src="Js/stats.min.js"></script>
 <script>
-
     if ( !WEBGL.isWebGLAvailable() ) { document.body.appendChild( WEBGL.getWebGLErrorMessage() ); }
 
     var camera, controls, scene, renderer;
@@ -42,54 +40,41 @@
     render();
 
     function init() {
-
         renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setPixelRatio( window.devicePixelRatio );
-        renderer.setSize( window.innerWidth , window.innerHeight -62);
+        renderer.setSize( window.innerWidth, window.innerHeight-62 ); // -62 pour le footer
         document.body.appendChild( renderer.domElement );
-
 
         clock = new THREE.Clock();
         scene = new THREE.Scene();
         //scene.background = new THREE.Color( 0xcccccc );
         //scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
 
-        camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 100, 10000 );
-        camera.position.set(0,1000,1000);
-
+        camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 10000 );
+        camera.position.set(0,500,600);
 
         var controls = new THREE.OrbitControls( camera);
         controls.minDistance = 100;
-        controls.maxDistance = 3000;
+        controls.maxDistance = 1500;
         controls.maxPolarAngle = (Math.PI / 2/1.5);
-
 
         var path = "texture/skybox/";
         var format = '.png';
-        var urls = [
-            path + 'right' + format,
-            path + 'left' + format,
-            path + 'top' + format,
-            path + 'bottom' + format,
-            path + 'back' + format,
-            path + 'front' + format
-        ];
-        var reflectionCube = THREE.ImageUtils.loadTextureCube(urls);
-        reflectionCube.format = THREE.RGBFormat;
-        var shader = THREE.ShaderLib[ "cube" ];
-        shader.uniforms[ "tCube" ].value = reflectionCube;
-        var material = new THREE.ShaderMaterial( {
-            fragmentShader: shader.fragmentShader,
-            vertexShader: shader.vertexShader,
-            uniforms: shader.uniforms,
-            depthWrite: false,
-            side: THREE.BackSide
-        });
-        sky = new THREE.Mesh(new THREE.BoxGeometry(10000, 10000, 10000), material);
-        sky.position.set(0, 0, 0);
-        scene.add(sky);
+        var directions = ["left", "right", "top", "bottom", "front", "back"];
 
-        //Le son
+        var materialArray = [];
+        for (var i = 0; i < 6; i++)
+            materialArray.push (new THREE.MeshPhongMaterial({
+                map : THREE.ImageUtils.loadTexture(path + directions[i] + format),
+                side : THREE.BackSide
+            }));
+
+        var skyGeometry = new THREE.CubeGeometry(10000,10000,10000);
+        var skyMaterial = new THREE.MeshFaceMaterial(materialArray);
+        var skyBox = new THREE.Mesh(skyGeometry, skyMaterial);
+        //skyBox.rotation.x += Math.PI /2;
+        scene.add( skyBox );
+
         //Ambiancial sound
         var listener = new THREE.AudioListener();
         camera.add( listener );
@@ -119,11 +104,10 @@
         cube("Texture/road.jpg",500,50,500,-2375,16,-80,1.6);
         cube("Texture/road.jpg",500,50,500,-2750,16,-70,1.6);
 
-
-
         //red moulin
-        var loadingManager = new THREE.LoadingManager( function () { scene.add( mr ); } );
-
+        var loadingManager = new THREE.LoadingManager( function () {
+            scene.add( mr );
+        } );
         // collada
         var loader = new THREE.ColladaLoader( loadingManager );
         loader.load( 'dae/model.dae', function ( collada ) {
@@ -132,8 +116,47 @@
             mr.scale.set(1,1,1);
         } );
 
-        var loadingManager = new THREE.LoadingManager( function () { scene.add( lexus ); } );
+        //house1
+        var loadingManager = new THREE.LoadingManager( function () {
+            scene.add( house1 );
+        } );
+        // collada
+        var loader = new THREE.ColladaLoader( loadingManager );
+        loader.load( 'dae/house1.dae', function ( collada ) {
+            house1 = collada.scene;
+            house1.position.set(-825,30,-575);
+            house1.scale.set(40,40,40);
+        } );
 
+        //house2
+        var loadingManager = new THREE.LoadingManager( function () {
+            scene.add( house2 );
+        } );
+        // collada
+        var loader = new THREE.ColladaLoader( loadingManager );
+        loader.load( 'dae/house2.dae', function ( collada ) {
+            house2 = collada.scene;
+            house2.position.set(-200,0,-475);
+            house2.scale.set(45,45,45);
+        } );
+
+        //house4
+        var loadingManager = new THREE.LoadingManager( function () {
+            scene.add( house4 );
+        } );
+        // collada
+        var loader = new THREE.ColladaLoader( loadingManager );
+        loader.load( 'dae/house4.dae', function ( collada ) {
+            house4 = collada.scene;
+            house4.position.set(-1350,30,790);
+            house4.scale.set(50,50,50);
+            house4.rotation.z= 0.01;
+        } );
+
+        // lexus
+        var loadingManager = new THREE.LoadingManager( function () {
+            scene.add( lexus );
+        } );
         // collada
         var loader = new THREE.ColladaLoader( loadingManager );
         loader.load( 'dae/Lexus.dae', function ( collada ) {
@@ -143,22 +166,20 @@
             lexus.rotation.z = 1.6;
         } );
 
-
-        // //  Positional sound sur la tutur
+        // Positional sound sur la tutur
         var CamaroListener = new THREE.AudioListener();
         camera.add(CamaroListener);
 
         var CamaroSound = new THREE.PositionalAudio(CamaroListener);
 
         var CamaroAudio = new THREE.AudioLoader();
-        CamaroAudio.load('sound/Om.mp3',
-            function(buffer){
-                CamaroSound.setBuffer(buffer);
-                CamaroSound.setLoop(true);
-                CamaroSound.setDistanceModel(10);
-                CamaroSound.setVolume(10);
-                CamaroSound.play(true);
-            });
+        CamaroAudio.load('sound/Om.mp3', function(buffer){
+            CamaroSound.setBuffer(buffer);
+            CamaroSound.setLoop(true);
+            CamaroSound.setDistanceModel(10);
+            CamaroSound.setVolume(10);
+            CamaroSound.play(true);
+        } );
 
         //collada doge
         var loadingManager = new THREE.LoadingManager( function () {
@@ -176,28 +197,25 @@
         } );
 
         // danseuse
-        //
-        // var loader = new THREE.ColladaLoader();
-        // loader.load( 'dae/Dance.dae', function ( collada ) {
-        //
-        //   var animations = collada.animations;
-        //   var avatar = collada.scene;
-        //
-        //
-        //   avatar.traverse( function ( child ) {
-        //     child.castShadow = true;
-        //     child.receiveShadow = true;
-        //
-        //   } );
-        //   mixer = new THREE.AnimationMixer( avatar );
-        //   var action = mixer.clipAction( animations[ 0 ] ).play();
-        //   scene.add( avatar );
-        //   avatar.position.set(600,170,-600);
-        //   avatar.scale.set(70,70,70);
-        // } );
-        //
-        // window.addEventListener( 'resize', onWindowResize, false );
+        var loader = new THREE.ColladaLoader();
+        loader.load( 'dae/Dance.dae', function ( collada ) {
 
+            var animations = collada.animations;
+            var avatar = collada.scene;
+
+            avatar.traverse( function ( child ) {
+                child.castShadow = true;
+                child.receiveShadow = true;
+
+            } );
+            mixer = new THREE.AnimationMixer( avatar );
+            var action = mixer.clipAction( animations[ 0 ] ).play();
+            scene.add( avatar );
+            avatar.position.set(600,170,-600);
+            avatar.scale.set(70,70,70);
+        } );
+
+        window.addEventListener( 'resize', onWindowResize, false );
 
         //stats
         stats = new Stats();
@@ -205,10 +223,10 @@
         controls.update();
         window.addEventListener( 'resize', onWindowResize, false );
 
-
-        //lumière
+        //La lumière
         var light = new THREE.AmbientLight( 0xf7f4f7 );
         scene.add( light );
+
         /*
         spotLight = new THREE.SpotLight( 0xffffff, 1 );
         spotLight.position.set(0,1200,0 );
@@ -228,13 +246,14 @@
 
         var spotLightHelper = new THREE.SpotLightHelper( spotLight );
         scene.add( spotLightHelper );
+
         */
     }
 
     function onWindowResize() {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
-        renderer.setSize( window.innerWidth, window.innerHeight-62 );
+        renderer.setSize( window.innerWidth, window.innerHeight-62 ); // -62 pour le footer
     }
 
     function animate() {
@@ -246,12 +265,12 @@
             doge.position.x = 2100;
             doge.position.z = -270;
         }
+
         render();
         stats.update();
     }
 
     function render() {
-
         var delta = clock.getDelta();
         if ( mixer !== undefined ) { mixer.update( delta ); }
         if ( mixer1 !== undefined ) { mixer1.update( delta ); }
@@ -264,7 +283,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12 center smol">
-                <a href="../index.php" class="white-text">retour à l'accueil</a>
+                <a href="../index.php" class="grey-text">retour à l'accueil</a>
             </div>
         </div>
     </div>

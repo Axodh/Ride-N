@@ -1,7 +1,7 @@
 <?php require_once "functions.php" ?>
 <html>
 <head>
-    <title>Terms & Conditions</title>
+    <title>Terms & Conditions - <?php echo $_SESSION['lang'] ?></title>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link type="text/css" rel="stylesheet" href="css/ridenCss.php"/>
@@ -91,7 +91,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12 center smol">
-                <a href="index.php" class="pad black-text">retour à l'accueil</a>
+                <a href="index.php" class="pad black-text"><?php echo $GLOBALS['TERMS_FOOTER'] ?></a>
             </div>
         </div>
     </div>
