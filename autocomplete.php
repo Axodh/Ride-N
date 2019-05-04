@@ -1,4 +1,8 @@
-<?php require_once "navbar.php" ?>
+
+<?php
+  $pageTitle = "ride";
+ require_once "navbar.php" ?>
+
 <head>
     <link type="text/css" rel="stylesheet" href="css/map.css"/>
 </head>
@@ -29,11 +33,15 @@
         <div class="col s6" id="map">
 
         </div>
-        <div class="col s6">
-          <button class="btn waves-effect waves-light" onclick="getDestinations()" type="submit" name="action">Commander
-            <i class="material-icons right">send</i>
-          </button>
-          <div id="display">
+        <br>
+        <div class="col s6 center">
+          <div class="card-panel">
+            <input type="text" class="datepicker" placeholder="Choisir une date" />
+            <input type="text" class="timepicker">
+            <button class="btn waves-effect waves-light" onclick="getDestinations()" type="submit" name="action">Commander
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
 
           </div>
         </div>

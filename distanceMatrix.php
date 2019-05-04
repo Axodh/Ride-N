@@ -1,9 +1,16 @@
 <?php
+require_once "functions.php";
 
 $departure = str_replace(' ','',$_POST["departure"]);
 $arrival = str_replace(' ','',$_POST["arrival"]);
 
-if( !empty($arrival) && !empty($departure)){
+if(empty($departure) && empty($arrival)){
+  echo "Les champs sont vides";
+}
+/*if(!isConnected()){
+  echo "Vous devez vous connecter pour commander";
+}*/
+if( !empty($arrival) && !empty($departure) /*&& isConnected()*/){
   $curl = curl_init();
 
   curl_setopt_array($curl, [
@@ -18,7 +25,8 @@ if( !empty($arrival) && !empty($departure)){
 
   curl_close($curl);
   $res = $data->rows[0]->elements[0]->distance->text;
-  echo $res;
+  $res2 = $data->rows[0]->elements[0]->duration->text;
+  echo $res, $res2;
 }
 
 ?>

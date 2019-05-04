@@ -1,3 +1,93 @@
+document.addEventListener('DOMContentLoaded', function() {
+  var hours = new Date().getHours();
+  var minutes = new Date().getMinutes();
+  var time = hours + ":" + minutes;
+  
+  var options = {
+    defaultDate: Date.now(),
+    minDate: new Date(Date.now()),
+    onClose:  () => {
+      var pickedTime = document.querySelector('.timepicker').value;
+      var pickedDate = document.querySelector('.datepicker').value;
+      var arrayTime = pickedTime.split(':');
+
+      var actualDate = new Date(Date.now());
+      actualDate = actualDate.toDateString();
+
+      var actualHours = new Date().getHours();
+      var actualMinutes = new Date().getMinutes();
+
+      var arrayActualDate = actualDate.split(' ');
+      arrayActualDate.splice(0,1);
+      pickedDate = pickedDate.replace(',','');
+
+      var arrayPickedDate = pickedDate.split(' ');
+
+
+      if (arrayActualDate[0] == arrayPickedDate[0]
+        && arrayActualDate[1] == arrayPickedDate[1]
+        && arrayActualDate[2] == arrayPickedDate[2]){
+          if(arrayTime[0] >= actualHours && arrayTime[1] >= actualMinutes){
+
+          }else if(arrayTime[0] <= actualHours && arrayTime[1] <= actualMinutes){
+            alert("Vous ne pouvez pas choisir une heure antérieur à l'heure actuelle");
+            document.querySelector('.timepicker').value = time;
+          }
+
+      }
+
+    }
+  };
+  var elems = document.querySelectorAll('.datepicker');
+  var instances = M.Datepicker.init(elems, options);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  var hours = new Date().getHours();
+  var minutes = new Date().getMinutes();
+  var time = hours + ":" + minutes;
+
+  var options = {
+    defaultTime: time,
+    twelveHour: false,
+    onCloseEnd: () => {
+      var pickedTime = document.querySelector('.timepicker').value;
+      var pickedDate = document.querySelector('.datepicker').value;
+      var arrayTime = pickedTime.split(':');
+
+      var actualDate = new Date(Date.now());
+      actualDate = actualDate.toDateString();
+
+      var actualHours = new Date().getHours();
+      var actualMinutes = new Date().getMinutes();
+
+      var arrayActualDate = actualDate.split(' ');
+      arrayActualDate.splice(0,1);
+      pickedDate = pickedDate.replace(',','');
+
+      var arrayPickedDate = pickedDate.split(' ');
+
+
+      if (arrayActualDate[0] == arrayPickedDate[0]
+        && arrayActualDate[1] == arrayPickedDate[1]
+        && arrayActualDate[2] == arrayPickedDate[2]){
+          if(arrayTime[0] >= actualHours && arrayTime[1] >= actualMinutes){
+
+          }else if(arrayTime[0] <= actualHours && arrayTime[1] <= actualMinutes){
+            alert("Vous ne pouvez pas choisir une heure antérieur à l'heure actuelle");
+            document.querySelector('.timepicker').value = time;
+          }
+
+      }
+
+    }
+  }
+
+  var elems = document.querySelectorAll('.timepicker');
+  var instances = M.Timepicker.init(elems, options);
+});
+
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     mapTypeControl: false,
