@@ -41,7 +41,7 @@ $GLOBALS['SUBSCRIBE_NO_SUB_TITLE'] = "no subscription";
 $GLOBALS['SUBSCRIBE_SIMPLE_SUB_TITLE'] = "solo subscription";
 $GLOBALS['SUBSCRIBE_TEAM_SUB_TITLE'] = "team subscription";
 $GLOBALS['SUBSCRIBE_ALERT'] = "alert('Please log in before ordering !')";
-$GLOBALS['SUBSCRIBE_PRICES'] = "Valid pricing at 06/05/19";
+$GLOBALS['SUBSCRIBE_PRICES'] = "Valid pricing at 05/06/19";
 
 $GLOBALS['SUBSCRIBE_CARD_1_CONTENT'] = "<p>The estimated price by kilometer (incl. taxes) by ride is minimum 3€ by day and 3,50€ by night.</p>
                                         <p style=\"font-weight: bold\">Available without any subscription.</p>";
@@ -65,7 +65,7 @@ $GLOBALS['SUBSCRIBE_CARD_2_CONTENT'] = "<p>Join the Ride'N community as member a
 $GLOBALS['SUBSCRIBE_CARD_3_CONTENT'] = "<p>Join the Ride'N community as team member and obtain special pricing !<br>Privileged access 7d / 7</p>
                                         <div>
                                             <b>Became non-binding team member:</b>
-                                            <li>80 € (incl. taxes) / month for companies with less than 10 employees</li>
+                                            <li>80€ (incl. taxes) / month for companies with less than 10 employees</li>
                                             <li>100€ (incl. taxes) / month for companies with more than 10 employees + 15€ ATI for every 10 more employees</li><br>
 
                                             <b>Became team member with 12 months commitment:</b>
@@ -82,3 +82,22 @@ $GLOBALS['FOOTER_STUFF'] = "stuff";
 $GLOBALS['FOOTER_TEAM'] = "team";
 $GLOBALS['FOOTER_TERMS'] = "terms";
 $GLOBALS['FOOTER_LANG'] = "lang";
+
+
+$submitForm = [
+    'error' =>  [
+        1=>"The name must be between 2 and 50 characters long.",
+        2=>"The first name must be between 2 and 50 characters..",
+        3=>"the email doesn't match the requested format.",
+        4=>"The password must be between 8 and 64 characters.",
+        5=>"Passwords do not match.",
+        6=>"Email already exists.",
+        7=>"The identifiers are not valid.",
+        8=>"Account has been deleted.",
+        10=>"The address must be between 2 and 70 characters.",
+        11=>"The city must be between 2 and 50 characters long.",
+        12=>"The zip code is incorrect.",
+        13=>"The number doesn't exist.",
+    ],
+    'success' => []
+];

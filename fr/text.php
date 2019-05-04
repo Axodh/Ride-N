@@ -65,7 +65,7 @@ $GLOBALS['SUBSCRIBE_CARD_2_CONTENT'] = "<p>Rejoignez la communauté Ride'N en ta
 $GLOBALS['SUBSCRIBE_CARD_3_CONTENT'] = "<p>Rejoignez la communauté Ride'N en tant que membre entreprise et bénéficiez de tarifs préférentiels !<br>Bénéficiez d'un accès privilégié en illimité 7j /7 !</p>
                                         <div>
                                             <b>Devenir membre entreprise sans engagement:</b>
-                                            <li>80 € TTC / mois pour une entreprise de - de 10 salariés</li>
+                                            <li>80€ TTC / mois pour une entreprise de - de 10 salariés</li>
                                             <li>100€ TTC / mois pour une entreprise de + de 10 salariés + 15€ TTC par tranche de 10 salariés</li><br>
 
                                             <b>Devenir membre entreprise avec engagement sur 12 mois:</b>
@@ -82,3 +82,22 @@ $GLOBALS['FOOTER_STUFF'] = "autre";
 $GLOBALS['FOOTER_TEAM'] = "equipe";
 $GLOBALS['FOOTER_TERMS'] = "termes";
 $GLOBALS['FOOTER_LANG'] = "lang";
+
+
+$submitForm = [
+    'error' =>  [
+        1=>"Le nom doit faire entre 2 et 50 caractères.",
+        2=>"Le prénom doit faire entre 2 et 50 caractères.",
+        3=>"L'email ne correspond pas au format demandé.",
+        4=>"Le mot de passe doit faire entre 8 et 64 caractères.",
+        5=>"Les mots de passe ne correspondent pas.",
+        6=>"L'email existe déjà.",
+        7=>"Les identifiants ne sont pas valides.",
+        8=>"Le compte à été supprimé.",
+        10=>"L'adresse doit faire entre 2 et 70 caractères.",
+        11=>"La ville doit faire entre 2 et 50 caractères.",
+        12=>"Le Code postal est incorrect.",
+        13=>"Le numéro n'existe pas.",
+    ],
+    'success' => []
+];
