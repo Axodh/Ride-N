@@ -1,22 +1,25 @@
 <?php $pageTitle = "Save Drivers";
 require_once "navbar.php";
 
-if( count($_POST) == 6
+if( count($_POST) == 7
 	&& !empty($_POST["nameDriver"])
 	&& !empty($_POST["surnameDriver"])
 	&& !empty($_POST["mailDriver"])
-	&& !empty($_POST["pwd"])
-	&& !empty($_POST["pwd2"])
+	&& !empty($_POST["addressDriver"])
 	&& !empty($_POST["numberDriver"])
+	&& !empty($_POST["pwdDriver"])
+	&& !empty($_POST["pwd2"])
 ){
 
 	$error = false;
 	$listOfErrors = [];
 
+	$_POST["mailDriver"] = trim($_POST["mailDriver"]);
 	$_POST["nameDriver"] = trim($_POST["nameDriver"]);
 	$_POST["surnameDriver"] = trim($_POST["surnameDriver"]);
-	$_POST["mailDriver"] = trim($_POST["mailDriver"]);
+	$_POST["addressDriver"] = trim($_POST["addressDriver"]);
 	$_POST["numberDriver"] = trim($_POST["numberDriver"]);
+
 
 
 	if(strlen($_POST["nameDriver"]) < 2 || strlen($_POST["nameDriver"]) > 50){
@@ -34,12 +37,17 @@ if( count($_POST) == 6
 		$listOfErrors[] = 3;
 	}
 
-	if(strlen($_POST["pwd"]) < 8 ||  strlen($_POST["pwd"]) > 64){
+	if(strlen($_POST["addressDriver"])<2 || strlen($_POST["addressDriver"])>70) {
+		$error = true;
+		$listOfErrors[] = 10;
+	}
+
+	if(strlen($_POST["pwdDriver"]) < 8 ||  strlen($_POST["pwdDriver"]) > 64){
 		$error = true;
 		$listOfErrors[] = 4;
 	}
 
-	if($_POST["pwd"] != $_POST["pwd2"]) {
+	if($_POST["pwdDriver"] != $_POST["pwd2"]) {
 		$error = true;
 		$listOfErrors[] = 5;
 	}
@@ -63,19 +71,18 @@ if( count($_POST) == 6
 		$_SESSION["data_form"] = $_POST;
 		header("Location: registerDriver.php");
 	} else {
-		$query = $db->prepare(" INSERT INTO driver
-								(nameDriver, surnameDriver, mailDriver, pwd, numberDriver)
-								VALUES
-								(:nameDriver, :surnameDriver, :mailDriver, :pwd, :numberDriver) ");
+		$query = $db->prepare(" INSERT INTO driver(mailDriver, nameDriver, surnameDriver, addressDriver, pwdDriver, numberDriver)
+								VALUES(:mailDriver, :nameDriver, :surnameDriver, :addressDriver, :pwdDriver, :numberDriver) ");
 
-		$pwd = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
+		$pwd = password_hash($_POST["pwdDriver"], PASSWORD_DEFAULT);
 
 		$return = $query->execute( [
-			"nameDriver"=>$_POST["nameDriver"],
-			"surnameDriver"=>$_POST["surnameDriver"],
-			"mailDriver"=>$_POST["mailDriver"],
-			"pwd"=>$pwd,
-			"numberDriver"=>$_POST["numberDriver"],
+			":nameDriver"=>$_POST["nameDriver"],
+			":surnameDriver"=>$_POST["surnameDriver"],
+			":mailDriver"=>$_POST["mailDriver"],
+			":numberDriver"=>$_POST["numberDriver"],
+			":addressDriver"=>$_POST["addressDriver"],
+			":pwdDriver"=>$pwd,
 		] );
 		header("Location: logInDriver.php");
 	}

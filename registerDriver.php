@@ -52,14 +52,20 @@ require_once "navbar.php"; unset($back) ?>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="pwdReg1" type="password" class="validate" name="pwd">
-                            <label for="pwdReg1"><?php echo $GLOBALS['REGISTER_PWD1'] ?></label>
+                            <input id="address" type="text" class="validate" name="addressDriver" value="<?php echo isset($dataForm["addressDriver"])? $dataForm["addressDriver"] : "" ?>">
+                            <label for="address"><?php echo $GLOBALS['REGISTER_ADDRESS'] ?></label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="pwdReg2" type="password" class="validate" name="pwd2">
-                            <label for="pwdReg2"><?php echo $GLOBALS['REGISTER_PWD2'] ?></label>
+                            <input id="pwdDriver" type="password" class="validate" name="pwdDriver">
+                            <label for="pwdDriver"><?php echo $GLOBALS['REGISTER_PWD1'] ?></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="pwd2" type="password" class="validate" name="pwd2">
+                            <label for="pwd2"><?php echo $GLOBALS['REGISTER_PWD2'] ?></label>
                         </div>
                     </div>
                     <p>

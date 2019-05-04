@@ -3,7 +3,7 @@
 $error = false;
 $submitForm = [];
 
-$account = $db->prepare("SELECT surnameDriver pwd, isBanned FROM driver WHERE mailDriver = :mailDriver");
+$account = $db->prepare("SELECT surnameDriver, pwdDriver, isBanned FROM driver WHERE mailDriver = :mailDriver");
 $account -> execute(["mailDriver"=>$_POST["mailDriver"]]);
 $pwdv = $account->fetch();
 if(!$pwdv["isBanned"]){
