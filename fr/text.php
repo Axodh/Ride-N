@@ -82,8 +82,6 @@ $GLOBALS['FOOTER_STUFF'] = "autre";
 $GLOBALS['FOOTER_TEAM'] = "equipe";
 $GLOBALS['FOOTER_TERMS'] = "termes";
 $GLOBALS['FOOTER_LANG'] = "lang";
-<<<<<<< HEAD
-=======
 
 $submitForm = [
     'error' =>  [
@@ -102,4 +100,3 @@ $submitForm = [
     ],
     'success' => []
 ];
->>>>>>> 5e6b21e0ee27f96dc4c0a6d79e1ce5adde12df69
