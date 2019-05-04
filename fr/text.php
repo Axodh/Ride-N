@@ -24,13 +24,13 @@ $GLOBALS['LOG_IN_SUBMIT'] = "se connecter";
 $GLOBALS['REGISTER_TITLE'] = "enregistrement";
 $GLOBALS['REGISTER_FIRST_NAME'] = "Prénom";
 $GLOBALS['REGISTER_LAST_NAME'] = "Nom";
-$GLOBALS['REGISTER_NUMBER'] = "Numéro";
+$GLOBALS['REGISTER_NUMBER'] = "Numéro de téléphone";
 $GLOBALS['REGISTER_ADDRESS'] = "Adresse";
 $GLOBALS['REGISTER_CITY'] = "Ville";
 $GLOBALS['REGISTER_ZIP'] = "Code postal";
 $GLOBALS['REGISTER_MAIL'] = "Email";
 $GLOBALS['REGISTER_PWD1'] = "Mot de passe";
-$GLOBALS['REGISTER_PWD2'] = "Confirmation";
+$GLOBALS['REGISTER_PWD2'] = "Confirmation de mot de passe";
 $GLOBALS['REGISTER_TERMS'] = "Je suis d'accord avec les <a href='terms.php'>Termes & Conditions</a> de service.";
 $GLOBALS['REGISTER_SUBMIT'] = "s'enregistrer";
 
