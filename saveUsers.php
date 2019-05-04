@@ -2,15 +2,15 @@
 require_once "navbar.php";
 
 if( count($_POST) == 9
-	&& !empty($_POST["nameUser"])
-	&& !empty($_POST["surnameUser"])
-	&& !empty($_POST["mailUser"])
-	&& !empty($_POST["pwd"])
-	&& !empty($_POST["pwd2"])
-	&& !empty($_POST["addressUser"])
-	&& !empty($_POST["cityUser"])
-	&& !empty($_POST["zipCode"])
-	&& !empty($_POST["numberUser"])
+&& !empty($_POST["nameUser"])
+&& !empty($_POST["surnameUser"])
+&& !empty($_POST["mailUser"])
+&& !empty($_POST["pwd"])
+&& !empty($_POST["pwd2"])
+&& !empty($_POST["addressUser"])
+&& !empty($_POST["cityUser"])
+&& !empty($_POST["zipCode"])
+&& !empty($_POST["numberUser"])
 ){
 
 	$error = false;
@@ -86,37 +86,37 @@ if( count($_POST) == 9
 	} else {
 
 		$query = $db->prepare(" INSERT INTO user
-								(nameUser, surnameUser, mailUser, pwd, addressUser, cityUser, zipCode, numberUser)
-								VALUES
-								(:nameUser, :surnameUser, :mailUser, :pwd, :addressUser, :cityUser, :zipCode, :numberUser) ");
+			(nameUser, surnameUser, mailUser, pwd, addressUser, cityUser, zipCode, numberUser)
+			VALUES
+			(:nameUser, :surnameUser, :mailUser, :pwd, :addressUser, :cityUser, :zipCode, :numberUser) ");
 
-		$pwd = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
+			$pwd = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
 
-		$return = $query->execute( [
-			"nameUser"=>$_POST["nameUser"],
-			"surnameUser"=>$_POST["surnameUser"],
-			"mailUser"=>$_POST["mailUser"],
-			"pwd"=>$pwd,
-			"addressUser"=>$_POST["addressUser"],
-			"cityUser"=>$_POST["cityUser"],
-			"zipCode"=>$_POST["zipCode"],
-			"numberUser"=>$_POST["numberUser"],
-		] );
+			$return = $query->execute( [
+				"nameUser"=>$_POST["nameUser"],
+				"surnameUser"=>$_POST["surnameUser"],
+				"mailUser"=>$_POST["mailUser"],
+				"pwd"=>$pwd,
+				"addressUser"=>$_POST["addressUser"],
+				"cityUser"=>$_POST["cityUser"],
+				"zipCode"=>$_POST["zipCode"],
+				"numberUser"=>$_POST["numberUser"],
+				] );
 
-		header("Location: logIn.php");
-	}
+				header("Location: logIn.php");
+			}
 
-} else {
-	echo '
-		<main>
-    		<div class="container">
-        		<div class="row">
-       				<div class="col s12 m8 offset-m2 center"><br>
-       					<h3 class="center white-text">' .$GLOBALS['SAVE_BACK']. '</h3>
-       					<h3 class="center white-text">' .$GLOBALS['SAVE_WARN']. '</h3>
-       				</div>
-				</div>
+		} else {
+			echo '
+			<main>
+			<div class="container">
+			<div class="row">
+			<div class="col s12 m8 offset-m2 center"><br>
+			<h3 class="center white-text">' .$GLOBALS['SAVE_BACK']. '</h3>
+			<h3 class="center white-text">' .$GLOBALS['SAVE_WARN']. '</h3>
 			</div>
-		</main>';
-}
-require_once "footer.php";
+			</div>
+			</div>
+			</main>';
+		}
+		require_once "footer.php";

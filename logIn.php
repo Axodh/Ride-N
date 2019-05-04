@@ -4,7 +4,7 @@ require_once "navbar.php" ?>
     <div class="text-center">
         <div class="container">
             <div class="row">
-                <h1 class="center white-text" style="font-variant: small-caps"><?php echo $GLOBALS['LOG_IN_TITLE'] ?></h1><br>
+                <h1 class="center white-text" style="font-variant: small-caps"><?php echo $GLOBALS['LOG_IN_TITLE'] ?> - users</h1><br>
                 <form method="POST" action="connexionVerif.php" class="col s12">
                     <?php
                     $tab = [];
