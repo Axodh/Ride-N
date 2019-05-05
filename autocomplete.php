@@ -7,22 +7,33 @@ require_once "navbar.php" ?>
     <div class="container">
         <div class="row">
             <input id="origin-input" class="controls col s4" type="text" placeholder="Enter an origin location">
+            <label for="origin-input" hidden>Origin</label>
             <input id="destination-input" class="controls col s4" type="text" placeholder="Enter a destination location">
+            <label for="destination-input" hidden>Destination</label>
 
-            <div id="mode-selector" class="controls" hidden>
-                <input id="changemode-walking" type="radio" name="walk" checked="checked">
-                <label for="changemode-walking">Walking</label>
-
-                <input id="changemode-transit" type="radio" name="transit">
-                <label for="changemode-transit">Transit</label>
-
-                <input id="changemode-driving" type="radio" name="drive">
-                <label for="changemode-driving">Driving</label>
-            </div>
+            <form action="#">
+                <div id="mode-selector" class="controls" hidden>
+                    <p>
+                        <label>
+                            <input id="changemode-walking" type="radio" name="type" class="with-gap" checked />
+                            <span>Walking</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input id="changemode-transit" type="radio" name="type" class="with-gap" />
+                            <span>Transit</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input id="changemode-driving" type="radio" name="type" class="with-gap" />
+                            <span>Driving</span>
+                        </label>
+                    </p>
+                </div>
+            </form>
         </div>
-    </div>
-
-    <div class="container">
         <div class="row">
             <div class="col s9" id="map"></div>
             <div class="col s3 center">
