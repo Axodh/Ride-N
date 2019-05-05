@@ -14,6 +14,10 @@ $GLOBALS['NAV_DEMO'] = "demo";
 $GLOBALS['NAV_HELLO'] = "hello";
 
 
+$GLOBALS['CART_TITLE'] = "my cart";
+$GLOBALS['CART_EMPTY'] = "Your cart is empty.";
+
+
 $GLOBALS['LOG_CHOICE_DRIVER'] = "im a driver";
 $GLOBALS['LOG_CHOICE_USER'] = "im an user";
 
@@ -45,6 +49,7 @@ $GLOBALS['SERVICES_TITLE_2'] = "Audioguide Rentals and / or Digital Devices";
 $GLOBALS['SERVICES_TITLE_3'] = "Preparation of sightseeing";
 $GLOBALS['SERVICES_TITLE_4'] = "Interpreters and coaches";
 $GLOBALS['SERVICES_TITLE_5'] = "Pet-sitting";
+$GLOBALS['SERVICES_UNITS_LEFT'] = "left";
 
 $GLOBALS['SERVICES_SUB_1_1'] = "Menu of the day, drink included (water, soda, half bottle of wine)";
 $GLOBALS['SERVICES_REF_1_1'] = "incl. taxes / person";
@@ -130,7 +135,6 @@ $GLOBALS['SAVE_WARN'] = "Not all the fields are filled !";
 
 $GLOBALS['TERMS_FOOTER'] = "back to index";
 
-$GLOBALS['FOOTER_STUFF'] = "stuff";
 $GLOBALS['FOOTER_TEAM'] = "team";
 $GLOBALS['FOOTER_TERMS'] = "terms";
 $GLOBALS['FOOTER_LANG'] = "lang";
