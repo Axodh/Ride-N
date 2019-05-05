@@ -76,14 +76,58 @@ $GLOBALS['SUBSCRIBE_CARD_3_CONTENT'] = "<p>Rejoignez la communauté Ride'N en ta
 $GLOBALS['SAVE_BACK'] = "Veuillez revenir à la page précédente.";
 $GLOBALS['SAVE_WARN'] = "Vous n'avez pas rempli tous les champs !";
 
+$GLOBALS['SERVICES_MAIN_TITLE'] = "services";
+$GLOBALS['SERVICES_TITLE_1'] = "Services de repas et de boisson";
+$GLOBALS['SERVICES_TITLE_2'] = "Locations d'audioguides et/ou appareils numériques";
+$GLOBALS['SERVICES_TITLE_3'] = "Préparation de visites touristiques";
+$GLOBALS['SERVICES_TITLE_4'] = "Interprètes et coachs";
+$GLOBALS['SERVICES_TITLE_5'] = "Pet-sitting";
+
+$GLOBALS['SERVICES_SUB_1_1'] = "Menu du jour, boisson incluse (eau, soda, demi-bouteille de vin)";
+$GLOBALS['SERVICES_REF_1_1'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_1_2'] = "Menu gastronomique";
+$GLOBALS['SERVICES_REF_1_2'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_1_3'] = "Menu au choix parmi un ensemble de restaurants";
+$GLOBALS['SERVICES_REF_1_3'] = "TTC + Prix du restaurant";
+
+$GLOBALS['SERVICES_SUB_2_1'] = "Ordinateur portable Mac Book Air";
+$GLOBALS['SERVICES_REF_2_1'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_2'] = "Ordinateur portable Mac Book Pro";
+$GLOBALS['SERVICES_REF_2_2'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_3'] = "Ordinateur portable Windows";
+$GLOBALS['SERVICES_REF_2_3'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_4'] = "Tablette Android ou Apple";
+$GLOBALS['SERVICES_REF_2_4'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_5'] = "Réservation audio-guides";
+$GLOBALS['SERVICES_REF_2_5'] = "TTC par personne";
+
+$GLOBALS['SERVICES_SUB_3_1'] = "Réservation hôtel";
+$GLOBALS['SERVICES_REF_3_1'] = "TTC par personne + chambre hôtel";
+$GLOBALS['SERVICES_SUB_3_2'] = "Achats billets touristiques";
+$GLOBALS['SERVICES_REF_3_2'] = "TTC par personne + prix billet";
+$GLOBALS['SERVICES_SUB_3_3'] = "Réservation restaurant";
+$GLOBALS['SERVICES_REF_3_3'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_3_4'] = "Autre";
+$GLOBALS['SERVICES_SUB_4_1'] = "Interprètes";
+$GLOBALS['SERVICES_REF_4_1'] = "TTC par heure";
+$GLOBALS['SERVICES_SUB_4_2'] = "Coach sportif";
+$GLOBALS['SERVICES_REF_4_2'] = "TTC par heure";
+$GLOBALS['SERVICES_SUB_4_3'] = "Coach culture";
+$GLOBALS['SERVICES_REF_4_3'] = "TTC par heure";
+$GLOBALS['SERVICES_SUB_4_4'] = "Autre";
+
+$GLOBALS['SERVICES_SUB_5_1'] = "Transport petit animal";
+$GLOBALS['SERVICES_REF_5_1'] = "TTC + Prix de la course";
+$GLOBALS['SERVICES_SUB_5_2'] = "Service transport vétérinaire";
+$GLOBALS['SERVICES_REF_5_2'] = "TTC par visite + Prix de la course";
+$GLOBALS['SERVICES_SUB_5_3'] = "Autre";
+
 $GLOBALS['TERMS_FOOTER'] = "revenir à l'accueil";
 
 $GLOBALS['FOOTER_STUFF'] = "autre";
 $GLOBALS['FOOTER_TEAM'] = "equipe";
 $GLOBALS['FOOTER_TERMS'] = "termes";
 $GLOBALS['FOOTER_LANG'] = "lang";
-<<<<<<< HEAD
-=======
 
 $submitForm = [
     'error' =>  [
