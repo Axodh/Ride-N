@@ -83,7 +83,7 @@ $GLOBALS['SERVICES_SUB_4_4'] = "Other";
 $GLOBALS['SERVICES_SUB_5_1'] = "Small animal transport";
 $GLOBALS['SERVICES_REF_5_1'] = "incl. taxes + Race price";
 $GLOBALS['SERVICES_SUB_5_2'] = "Veterinary services transport";
-$GLOBALS['SERVICES_REF_5_2'] = "TTC par visite + Race price";
+$GLOBALS['SERVICES_REF_5_2'] = "incl. taxes / visit + Race price";
 $GLOBALS['SERVICES_SUB_5_3'] = "Other";
 
 
