@@ -1,8 +1,8 @@
-INSERT INTO `services_names`(`idService`, `name`) VALUES (1,"food");
-INSERT INTO `services_names`(`idService`, `name`) VALUES (2,"num");
-INSERT INTO `services_names`(`idService`, `name`) VALUES (3,"tour");
-INSERT INTO `services_names`(`idService`, `name`) VALUES (4,"lang");
-INSERT INTO `services_names`(`idService`, `name`) VALUES (5,"pet");
+INSERT INTO `services_icons`(`idService`, `icon`) VALUES (1,"restaurant");
+INSERT INTO `services_icons`(`idService`, `icon`) VALUES (2,"headset");
+INSERT INTO `services_icons`(`idService`, `icon`) VALUES (3,"local_see");
+INSERT INTO `services_icons`(`idService`, `icon`) VALUES (4,"language");
+INSERT INTO `services_icons`(`idService`, `icon`) VALUES (5,"pets");
 
 INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (1, 20, NULL);
 INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (1, 50, NULL);

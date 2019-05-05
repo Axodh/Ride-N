@@ -2,7 +2,6 @@
     <div class="container">
         <div class="row">
             <div class="col s12 center smol">
-                <a href="#" class="white-text pad"><?php echo $GLOBALS['FOOTER_STUFF'] ?></a>
                 <a href="#" class="white-text pad"><?php echo $GLOBALS['FOOTER_TEAM'] ?></a>
                 <a href="terms.php" class="white-text pad"><?php echo $GLOBALS['FOOTER_TERMS'] ?></a>
                 <a href="lang.php" class="white-text pad"><?php echo $GLOBALS['FOOTER_LANG'] ?></a>

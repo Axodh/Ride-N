@@ -12,28 +12,32 @@ require_once "navbar.php"; ?>
                     $maxServices = $db->query("SELECT max(idService) as value from services");
                     $max = $maxServices->fetch(); // number of services
 
-                    for ($i = 1; $i <= $max['value']; $i++) { $j = 0;
+                    for ($idService = 1; $idService <= $max['value']; $idService++) { $idChoice = 0;
                         $services = $db->prepare("SELECT price, nbLeft from services WHERE idService = :idService");
-                        $info = $db->prepare("SELECT name, icon from services_names WHERE idService = :idService");
+                        $info = $db->prepare("SELECT icon from services_icons WHERE idService = :idService");
 
-                        $services -> execute([":idService"=>$i]);
-                        $info -> execute([":idService"=>$i]);
+                        $services -> execute([":idService"=>$idService]);
+                        $info -> execute([":idService"=>$idService]);
 
                         $info = $info -> fetch();
 
-                        echo "<li>";
-                        echo "<div class=\"collapsible-header\"><i class=\"material-icons\">" .$info['icon']. "</i>" .$GLOBALS['SERVICES_TITLE_'.$i]. "</div>";
+                        echo ($idService==1)? "<li class=\"active\">":"<li>";
+                        echo "<div class=\"collapsible-header\"><i class=\"material-icons\">" .$info['icon']. "</i>" .$GLOBALS['SERVICES_TITLE_'.$idService]. "</div>";
                         echo "<div class=\"collapsible-body\" style=\"background-color: #F5F5F5\">";
                         echo "<table>";
 
-                        foreach($services as $key=>$row) { $j++;
+                        foreach($services as $key=>$val) { $idChoice++;
 
-                            if($row['price']!=0) $price = $row['price']. "€ " .$GLOBALS['SERVICES_REF_'.$i.'_'.$j];
+                            if($val['price']!=0) $price = $val['price']. "€ " .$GLOBALS['SERVICES_REF_'.$idService.'_'.$idChoice];
                             else $price = "Nous consulter";
 
+                            if($val['nbLeft']!=NULL) $nbLeft = $val['nbLeft']. " " .$GLOBALS['SERVICES_UNITS_LEFT'];
+                            else $nbLeft = "";
+
                             echo "<tr>";
-                            echo "<td width=\"20px\"><label><input type=\"checkbox\" class=\"filled-in\" id=\"" .$info['name']. "-" .$j. "\"/><span></span></label></td>";
-                            echo "<td width=\"800px\">" .$GLOBALS['SERVICES_SUB_'.$i.'_'.$j]. "</td>";
+                            echo "<td width='20px'><label><input type=\"checkbox\" class=\"filled-in\" id=\"" .$idService. "-" .$idChoice. "\"/><span></span></label></td>";
+                            echo "<td width='500px'>" .$GLOBALS['SERVICES_SUB_'.$idService.'_'.$idChoice]. "</td>";
+                            echo "<td width='300px'>" .$nbLeft. "</td>";
                             echo "<td>" .$price. "</td>";
                             echo "</tr>";
                         }
