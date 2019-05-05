@@ -39,52 +39,52 @@ $GLOBALS['REGISTER_SUBMIT'] = "registro";
 $GLOBALS['LOG_OUT_TITLE'] = "desconectarse";
 
 
-$GLOBALS['SERVICES_MAIN_TITLE'] = "services";
-$GLOBALS['SERVICES_TITLE_1'] = "Services de repas et de boisson";
-$GLOBALS['SERVICES_TITLE_2'] = "Locations d'audioguides et/ou appareils numériques";
-$GLOBALS['SERVICES_TITLE_3'] = "Préparation de visites touristiques";
-$GLOBALS['SERVICES_TITLE_4'] = "Interprètes et coachs";
-$GLOBALS['SERVICES_TITLE_5'] = "Pet-sitting";
+$GLOBALS['SERVICES_MAIN_TITLE'] = "servicio";
+$GLOBALS['SERVICES_TITLE_1'] = "Servicios de comidas y bebidas";
+$GLOBALS['SERVICES_TITLE_2'] = "Alquiler de audioguía y / o dispositivos digitales";
+$GLOBALS['SERVICES_TITLE_3'] = "Preparación de visitas guiadas";
+$GLOBALS['SERVICES_TITLE_4'] = "Intérpretes y entrenadores";
+$GLOBALS['SERVICES_TITLE_5'] = "Sesiones de mascotas";
 
-$GLOBALS['SERVICES_SUB_1_1'] = "Menu du jour, boisson incluse (eau, soda, demi-bouteille de vin)";
-$GLOBALS['SERVICES_REF_1_1'] = "TTC par personne";
-$GLOBALS['SERVICES_SUB_1_2'] = "Menu gastronomique";
-$GLOBALS['SERVICES_REF_1_2'] = "TTC par personne";
-$GLOBALS['SERVICES_SUB_1_3'] = "Menu au choix parmi un ensemble de restaurants";
-$GLOBALS['SERVICES_REF_1_3'] = "TTC + Prix du restaurant";
+$GLOBALS['SERVICES_SUB_1_1'] = "Menú del día, bebida incluida (agua, soda, media botella de vino)";
+$GLOBALS['SERVICES_REF_1_1'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_1_2'] = "Menú gourmet";
+$GLOBALS['SERVICES_REF_1_2'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_1_3'] = "Menú a elegir entre un conjunto de restaurantes";
+$GLOBALS['SERVICES_REF_1_3'] = "Impuestos incluidos + Precio del restaurante";
 
-$GLOBALS['SERVICES_SUB_2_1'] = "Ordinateur portable Mac Book Air";
-$GLOBALS['SERVICES_REF_2_1'] = "TTC par personne";
-$GLOBALS['SERVICES_SUB_2_2'] = "Ordinateur portable Mac Book Pro";
-$GLOBALS['SERVICES_REF_2_2'] = "TTC par personne";
-$GLOBALS['SERVICES_SUB_2_3'] = "Ordinateur portable Windows";
-$GLOBALS['SERVICES_REF_2_3'] = "TTC par personne";
-$GLOBALS['SERVICES_SUB_2_4'] = "Tablette Android ou Apple";
-$GLOBALS['SERVICES_REF_2_4'] = "TTC par personne";
-$GLOBALS['SERVICES_SUB_2_5'] = "Réservation audio-guides";
-$GLOBALS['SERVICES_REF_2_5'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_1'] = "Ordenador portátil MacBook Air";
+$GLOBALS['SERVICES_REF_2_1'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_2_2'] = "Ordenador portátil MacBook Pro";
+$GLOBALS['SERVICES_REF_2_2'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_2_3'] = "Ordenador portátil Windows";
+$GLOBALS['SERVICES_REF_2_3'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_2_4'] = "Tablet Android o Apple";
+$GLOBALS['SERVICES_REF_2_4'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_2_5'] = "Reservacion de audioguías";
+$GLOBALS['SERVICES_REF_2_5'] = "Impuestos incluidos / persona";
 
-$GLOBALS['SERVICES_SUB_3_1'] = "Réservation hôtel";
-$GLOBALS['SERVICES_REF_3_1'] = "TTC par personne + chambre hôtel";
-$GLOBALS['SERVICES_SUB_3_2'] = "Achats billets touristiques";
-$GLOBALS['SERVICES_REF_3_2'] = "TTC par personne + prix billet";
-$GLOBALS['SERVICES_SUB_3_3'] = "Réservation restaurant";
-$GLOBALS['SERVICES_REF_3_3'] = "TTC par personne";
-$GLOBALS['SERVICES_SUB_3_4'] = "Autre";
+$GLOBALS['SERVICES_SUB_3_1'] = "Reservacion de hotel";
+$GLOBALS['SERVICES_REF_3_1'] = "Impuestos incluidos / persona + habitación en hotel";
+$GLOBALS['SERVICES_SUB_3_2'] = "Compra de entradas turisticas";
+$GLOBALS['SERVICES_REF_3_2'] = "Impuestos incluidos / persona + prix billet";
+$GLOBALS['SERVICES_SUB_3_3'] = "Reservacion de restaurante";
+$GLOBALS['SERVICES_REF_3_3'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_3_4'] = "Otro";
 
-$GLOBALS['SERVICES_SUB_4_1'] = "Interprètes";
-$GLOBALS['SERVICES_REF_4_1'] = "TTC par heure";
-$GLOBALS['SERVICES_SUB_4_2'] = "Coach sportif";
-$GLOBALS['SERVICES_REF_4_2'] = "TTC par heure";
-$GLOBALS['SERVICES_SUB_4_3'] = "Coach culture";
-$GLOBALS['SERVICES_REF_4_3'] = "TTC par heure";
-$GLOBALS['SERVICES_SUB_4_4'] = "Autre";
+$GLOBALS['SERVICES_SUB_4_1'] = "Intérpretes";
+$GLOBALS['SERVICES_REF_4_1'] = "Impuestos incluidos para hora";
+$GLOBALS['SERVICES_SUB_4_2'] = "Entrenador deportivo";
+$GLOBALS['SERVICES_REF_4_2'] = "Impuestos incluidos para hora";
+$GLOBALS['SERVICES_SUB_4_3'] = "Entrenador cultivo";
+$GLOBALS['SERVICES_REF_4_3'] = "Impuestos incluidos para hora";
+$GLOBALS['SERVICES_SUB_4_4'] = "Otro";
 
-$GLOBALS['SERVICES_SUB_5_1'] = "Transport petit animal";
-$GLOBALS['SERVICES_REF_5_1'] = "TTC + Prix de la course";
-$GLOBALS['SERVICES_SUB_5_2'] = "Service transport vétérinaire";
-$GLOBALS['SERVICES_REF_5_2'] = "TTC par visite + Prix de la course";
-$GLOBALS['SERVICES_SUB_5_3'] = "Autre";
+$GLOBALS['SERVICES_SUB_5_1'] = "Transporte de animales pequeños";
+$GLOBALS['SERVICES_REF_5_1'] = "Impuestos incluidos + Precio de carrera";
+$GLOBALS['SERVICES_SUB_5_2'] = "Servicio de transporte veterinario";
+$GLOBALS['SERVICES_REF_5_2'] = "Impuestos / visitas + Precio de carrera";
+$GLOBALS['SERVICES_SUB_5_3'] = "Otro";
 
 
 $GLOBALS['SUBSCRIBE_TITLE'] = "nuestras suscripciones";
