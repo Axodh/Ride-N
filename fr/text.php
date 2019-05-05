@@ -14,6 +14,10 @@ $GLOBALS['NAV_DEMO'] = "demo";
 $GLOBALS['NAV_HELLO'] = "bonjour";
 
 
+$GLOBALS['CART_TITLE'] = "mon panier";
+$GLOBALS['CART_EMPTY'] = "Votre panier est vide.";
+
+
 $GLOBALS['LOG_CHOICE_DRIVER'] = "je suis un conducteur";
 $GLOBALS['LOG_CHOICE_USER'] = "je suis un utilisateur";
 
@@ -45,6 +49,7 @@ $GLOBALS['SERVICES_TITLE_2'] = "Locations d'audioguides et/ou appareils numériq
 $GLOBALS['SERVICES_TITLE_3'] = "Préparation de visites touristiques";
 $GLOBALS['SERVICES_TITLE_4'] = "Interprètes et coachs";
 $GLOBALS['SERVICES_TITLE_5'] = "Pet-sitting";
+$GLOBALS['SERVICES_UNITS_LEFT'] = "unités restantes";
 
 $GLOBALS['SERVICES_SUB_1_1'] = "Menu du jour, boisson incluse (eau, soda, demi-bouteille de vin)";
 $GLOBALS['SERVICES_REF_1_1'] = "TTC par personne";
@@ -130,7 +135,6 @@ $GLOBALS['SAVE_WARN'] = "Vous n'avez pas rempli tous les champs !";
 
 $GLOBALS['TERMS_FOOTER'] = "revenir à l'accueil";
 
-$GLOBALS['FOOTER_STUFF'] = "autre";
 $GLOBALS['FOOTER_TEAM'] = "equipe";
 $GLOBALS['FOOTER_TERMS'] = "termes";
 $GLOBALS['FOOTER_LANG'] = "lang";
