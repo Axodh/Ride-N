@@ -11,9 +11,11 @@ $GLOBALS['LANG_ES'] = "Spanish";
 $GLOBALS['NAV_SUBSCRIBE'] = "subscriptions";
 $GLOBALS['NAV_SERVICES'] = "services";
 $GLOBALS['NAV_DEMO'] = "demo";
+$GLOBALS['NAV_HELLO'] = "hello";
 
-$GLOBALS['LOG_CHOICE_DRIVER'] = "im a Driver";
-$GLOBALS['LOG_CHOICE_USER'] = "im an User";
+
+$GLOBALS['LOG_CHOICE_DRIVER'] = "im a driver";
+$GLOBALS['LOG_CHOICE_USER'] = "im an user";
 
 $GLOBALS['LOG_IN_TITLE'] = "log in";
 $GLOBALS['LOG_IN_MAIL'] = "Mail";
@@ -35,6 +37,55 @@ $GLOBALS['REGISTER_TERMS'] = "I agree with the <a href='terms.php'>Terms and Con
 $GLOBALS['REGISTER_SUBMIT'] = "register";
 
 $GLOBALS['LOG_OUT_TITLE'] = "log off";
+
+
+$GLOBALS['SERVICES_MAIN_TITLE'] = "services";
+$GLOBALS['SERVICES_TITLE_1'] = "Services de repas et de boisson";
+$GLOBALS['SERVICES_TITLE_2'] = "Locations d'audioguides et/ou appareils numériques";
+$GLOBALS['SERVICES_TITLE_3'] = "Préparation de visites touristiques";
+$GLOBALS['SERVICES_TITLE_4'] = "Interprètes et coachs";
+$GLOBALS['SERVICES_TITLE_5'] = "Pet-sitting";
+
+$GLOBALS['SERVICES_SUB_1_1'] = "Menu du jour, boisson incluse (eau, soda, demi-bouteille de vin)";
+$GLOBALS['SERVICES_REF_1_1'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_1_2'] = "Menu gastronomique";
+$GLOBALS['SERVICES_REF_1_2'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_1_3'] = "Menu au choix parmi un ensemble de restaurants";
+$GLOBALS['SERVICES_REF_1_3'] = "TTC + Prix du restaurant";
+
+$GLOBALS['SERVICES_SUB_2_1'] = "Ordinateur portable Mac Book Air";
+$GLOBALS['SERVICES_REF_2_1'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_2'] = "Ordinateur portable Mac Book Pro";
+$GLOBALS['SERVICES_REF_2_2'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_3'] = "Ordinateur portable Windows";
+$GLOBALS['SERVICES_REF_2_3'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_4'] = "Tablette Android ou Apple";
+$GLOBALS['SERVICES_REF_2_4'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_5'] = "Réservation audio-guides";
+$GLOBALS['SERVICES_REF_2_5'] = "TTC par personne";
+
+$GLOBALS['SERVICES_SUB_3_1'] = "Réservation hôtel";
+$GLOBALS['SERVICES_REF_3_1'] = "TTC par personne + chambre hôtel";
+$GLOBALS['SERVICES_SUB_3_2'] = "Achats billets touristiques";
+$GLOBALS['SERVICES_REF_3_2'] = "TTC par personne + prix billet";
+$GLOBALS['SERVICES_SUB_3_3'] = "Réservation restaurant";
+$GLOBALS['SERVICES_REF_3_3'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_3_4'] = "Autre";
+
+$GLOBALS['SERVICES_SUB_4_1'] = "Interprètes";
+$GLOBALS['SERVICES_REF_4_1'] = "TTC par heure";
+$GLOBALS['SERVICES_SUB_4_2'] = "Coach sportif";
+$GLOBALS['SERVICES_REF_4_2'] = "TTC par heure";
+$GLOBALS['SERVICES_SUB_4_3'] = "Coach culture";
+$GLOBALS['SERVICES_REF_4_3'] = "TTC par heure";
+$GLOBALS['SERVICES_SUB_4_4'] = "Autre";
+
+$GLOBALS['SERVICES_SUB_5_1'] = "Transport petit animal";
+$GLOBALS['SERVICES_REF_5_1'] = "TTC + Prix de la course";
+$GLOBALS['SERVICES_SUB_5_2'] = "Service transport vétérinaire";
+$GLOBALS['SERVICES_REF_5_2'] = "TTC par visite + Prix de la course";
+$GLOBALS['SERVICES_SUB_5_3'] = "Autre";
+
 
 $GLOBALS['SUBSCRIBE_TITLE'] = "subscriptions";
 $GLOBALS['SUBSCRIBE_NO_SUB_TITLE'] = "no subscription";
@@ -65,13 +116,14 @@ $GLOBALS['SUBSCRIBE_CARD_2_CONTENT'] = "<p>Join the Ride'N community as member a
 $GLOBALS['SUBSCRIBE_CARD_3_CONTENT'] = "<p>Join the Ride'N community as team member and obtain special pricing !<br>Privileged access 7d / 7</p>
                                         <div>
                                             <b>Became non-binding team member:</b>
-                                            <li>80€ (incl. taxes) / month for companies with less than 10 employees</li>
+                                            <li>80 € (incl. taxes) / month for companies with less than 10 employees</li>
                                             <li>100€ (incl. taxes) / month for companies with more than 10 employees + 15€ ATI for every 10 more employees</li><br>
 
                                             <b>Became team member with 12 months commitment:</b>
                                             <li>65€ (incl. taxes) / month for companies with less than 10 employees</li>
                                             <li>85€ (incl. taxes) / month for companies with more than 10 employees + 12€ ATI for every 10 more employees</li>
                                         </div>";
+
 
 $GLOBALS['SAVE_BACK'] = "Please go back.";
 $GLOBALS['SAVE_WARN'] = "Not all the fields are filled !";
@@ -82,7 +134,6 @@ $GLOBALS['FOOTER_STUFF'] = "stuff";
 $GLOBALS['FOOTER_TEAM'] = "team";
 $GLOBALS['FOOTER_TERMS'] = "terms";
 $GLOBALS['FOOTER_LANG'] = "lang";
-
 
 $submitForm = [
     'error' =>  [

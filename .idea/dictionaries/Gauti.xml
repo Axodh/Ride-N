@@ -19,10 +19,13 @@
       <w>bouteille</w>
       <w>camaro</w>
       <w>chambre</w>
+      <w>changemode</w>
       <w>chillin</w>
+      <w>choisir</w>
       <w>choix</w>
       <w>coachs</w>
       <w>collada</w>
+      <w>conducteur</w>
       <w>confirmer</w>
       <w>connecter</w>
       <w>connectez</w>
@@ -63,6 +66,7 @@
       <w>modif</w>
       <w>multilingue</w>
       <w>navbar</w>
+      <w>nombre</w>
       <w>nuit</w>
       <w>numériques</w>
       <w>numéro</w>
@@ -98,9 +102,11 @@
       <w>tablette</w>
       <w>tarifs</w>
       <w>termes</w>
+      <w>timepicker</w>
       <w>touristiques</w>
       <w>tous</w>
       <w>téléphone</w>
+      <w>utilisateur</w>
       <w>valables</w>
       <w>valign</w>
       <w>verif</w>

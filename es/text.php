@@ -10,13 +10,15 @@ $GLOBALS['LANG_ES'] = "Español";
 
 $GLOBALS['NAV_SUBSCRIBE'] = "suscripción";
 $GLOBALS['NAV_SERVICES'] = "servicios";
-$GLOBALS['NAV_DEMO'] = "demostración";
+$GLOBALS['NAV_DEMO'] = "demo";
+$GLOBALS['NAV_HELLO'] = "hola";
+
 
 $GLOBALS['LOG_CHOICE_DRIVER'] = "yo soy un conductor";
-$GLOBALS['LOG_CHOICE_USER'] = " yo soy un usuario";
+$GLOBALS['LOG_CHOICE_USER'] = "yo soy un usuario";
 
 $GLOBALS['LOG_IN_TITLE'] = "conexión";
-$GLOBALS['LOG_IN_MAIL'] = "E-mail";
+$GLOBALS['LOG_IN_MAIL'] = "Email";
 $GLOBALS['LOG_IN_PWD'] = "Contraseña";
 $GLOBALS['LOG_IN_FORGOTTEN'] = "¿ Contraseña olvidadaé ?";
 $GLOBALS['LOG_IN_SUBMIT'] = "conectarse";
@@ -28,13 +30,62 @@ $GLOBALS['REGISTER_NUMBER'] = "Número";
 $GLOBALS['REGISTER_ADDRESS'] = "Dirección";
 $GLOBALS['REGISTER_CITY'] = "Ciudad";
 $GLOBALS['REGISTER_ZIP'] = "Código postal";
-$GLOBALS['REGISTER_MAIL'] = "E-mail";
+$GLOBALS['REGISTER_MAIL'] = "Email";
 $GLOBALS['REGISTER_PWD1'] = "Contraseña";
-$GLOBALS['REGISTER_PWD2'] = "confirmación";
+$GLOBALS['REGISTER_PWD2'] = "Confirmación";
 $GLOBALS['REGISTER_TERMS'] = "Estoy de acuerdo con los <a href='terms.php'>términos y Condiciones</a> de servicio.";
 $GLOBALS['REGISTER_SUBMIT'] = "registro";
 
 $GLOBALS['LOG_OUT_TITLE'] = "desconectarse";
+
+
+$GLOBALS['SERVICES_MAIN_TITLE'] = "services";
+$GLOBALS['SERVICES_TITLE_1'] = "Services de repas et de boisson";
+$GLOBALS['SERVICES_TITLE_2'] = "Locations d'audioguides et/ou appareils numériques";
+$GLOBALS['SERVICES_TITLE_3'] = "Préparation de visites touristiques";
+$GLOBALS['SERVICES_TITLE_4'] = "Interprètes et coachs";
+$GLOBALS['SERVICES_TITLE_5'] = "Pet-sitting";
+
+$GLOBALS['SERVICES_SUB_1_1'] = "Menu du jour, boisson incluse (eau, soda, demi-bouteille de vin)";
+$GLOBALS['SERVICES_REF_1_1'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_1_2'] = "Menu gastronomique";
+$GLOBALS['SERVICES_REF_1_2'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_1_3'] = "Menu au choix parmi un ensemble de restaurants";
+$GLOBALS['SERVICES_REF_1_3'] = "TTC + Prix du restaurant";
+
+$GLOBALS['SERVICES_SUB_2_1'] = "Ordinateur portable Mac Book Air";
+$GLOBALS['SERVICES_REF_2_1'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_2'] = "Ordinateur portable Mac Book Pro";
+$GLOBALS['SERVICES_REF_2_2'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_3'] = "Ordinateur portable Windows";
+$GLOBALS['SERVICES_REF_2_3'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_4'] = "Tablette Android ou Apple";
+$GLOBALS['SERVICES_REF_2_4'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_2_5'] = "Réservation audio-guides";
+$GLOBALS['SERVICES_REF_2_5'] = "TTC par personne";
+
+$GLOBALS['SERVICES_SUB_3_1'] = "Réservation hôtel";
+$GLOBALS['SERVICES_REF_3_1'] = "TTC par personne + chambre hôtel";
+$GLOBALS['SERVICES_SUB_3_2'] = "Achats billets touristiques";
+$GLOBALS['SERVICES_REF_3_2'] = "TTC par personne + prix billet";
+$GLOBALS['SERVICES_SUB_3_3'] = "Réservation restaurant";
+$GLOBALS['SERVICES_REF_3_3'] = "TTC par personne";
+$GLOBALS['SERVICES_SUB_3_4'] = "Autre";
+
+$GLOBALS['SERVICES_SUB_4_1'] = "Interprètes";
+$GLOBALS['SERVICES_REF_4_1'] = "TTC par heure";
+$GLOBALS['SERVICES_SUB_4_2'] = "Coach sportif";
+$GLOBALS['SERVICES_REF_4_2'] = "TTC par heure";
+$GLOBALS['SERVICES_SUB_4_3'] = "Coach culture";
+$GLOBALS['SERVICES_REF_4_3'] = "TTC par heure";
+$GLOBALS['SERVICES_SUB_4_4'] = "Autre";
+
+$GLOBALS['SERVICES_SUB_5_1'] = "Transport petit animal";
+$GLOBALS['SERVICES_REF_5_1'] = "TTC + Prix de la course";
+$GLOBALS['SERVICES_SUB_5_2'] = "Service transport vétérinaire";
+$GLOBALS['SERVICES_REF_5_2'] = "TTC par visite + Prix de la course";
+$GLOBALS['SERVICES_SUB_5_3'] = "Autre";
+
 
 $GLOBALS['SUBSCRIBE_TITLE'] = "nuestras suscripciones";
 $GLOBALS['SUBSCRIBE_NO_SUB_TITLE'] = "sin suscripción";
@@ -72,6 +123,7 @@ $GLOBALS['SUBSCRIBE_CARD_3_CONTENT'] = "<p>¡Únase a la comunidad Ride'N como m
                                             <li>65€ (impuestos incluidos) / mes para una empresa con menos de 10 empleados</li>
                                             <li>85€ (impuestos incluidos) / mes para una empresa con más de 10 empleados + 12€ impuestos incluidos por 10 empleados</li>
                                         </div>";
+
 
 $GLOBALS['SAVE_BACK'] = "Por favor regrese a la página anterior.";
 $GLOBALS['SAVE_WARN'] = "No has rellenado todos los campos !";

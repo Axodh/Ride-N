@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var hours = new Date().getHours();
   var minutes = new Date().getMinutes();
   var time = hours + ":" + minutes;
-  
+
   var options = {
     defaultDate: Date.now(),
     minDate: new Date(Date.now()),
@@ -23,19 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
       var arrayPickedDate = pickedDate.split(' ');
 
-
-      if (arrayActualDate[0] == arrayPickedDate[0]
-        && arrayActualDate[1] == arrayPickedDate[1]
-        && arrayActualDate[2] == arrayPickedDate[2]){
-          if(arrayTime[0] >= actualHours && arrayTime[1] >= actualMinutes){
-
-          }else if(arrayTime[0] <= actualHours && arrayTime[1] <= actualMinutes){
-            alert("Vous ne pouvez pas choisir une heure antérieur à l'heure actuelle");
-            document.querySelector('.timepicker').value = time;
-          }
-
+      if(arrayActualDate[0] == arrayPickedDate[0] && arrayActualDate[1] == arrayPickedDate[1] && arrayActualDate[2] == arrayPickedDate[2]){
+        if(arrayTime[0] <= actualHours && arrayTime[1] <= actualMinutes){
+          alert("You cannot go from the past!");
+          document.querySelector('.timepicker').value = time;
+        }
       }
-
     }
   };
   var elems = document.querySelectorAll('.datepicker');
@@ -67,26 +60,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
       var arrayPickedDate = pickedDate.split(' ');
 
-
-      if (arrayActualDate[0] == arrayPickedDate[0]
-        && arrayActualDate[1] == arrayPickedDate[1]
-        && arrayActualDate[2] == arrayPickedDate[2]){
-          if(arrayTime[0] >= actualHours && arrayTime[1] >= actualMinutes){
-
-          }else if(arrayTime[0] <= actualHours && arrayTime[1] <= actualMinutes){
-            alert("Vous ne pouvez pas choisir une heure antérieur à l'heure actuelle");
-            document.querySelector('.timepicker').value = time;
-          }
-
+      if (arrayActualDate[0] == arrayPickedDate[0] && arrayActualDate[1] == arrayPickedDate[1] && arrayActualDate[2] == arrayPickedDate[2]){
+        if(arrayTime[0] <= actualHours && arrayTime[1] <= actualMinutes){
+          alert("Vous ne pouvez pas choisir une heure antérieur à l'heure actuelle");
+          document.querySelector('.timepicker').value = time;
+        }
       }
-
     }
-  }
+  };
 
   var elems = document.querySelectorAll('.timepicker');
   var instances = M.Timepicker.init(elems, options);
 });
-
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -118,8 +103,7 @@ function AutocompleteDirectionsHandler(map) {
   // Specify just the place data fields that you need.
   originAutocomplete.setFields(['place_id']);
 
-  var destinationAutocomplete =
-      new google.maps.places.Autocomplete(destinationInput);
+  var destinationAutocomplete = new google.maps.places.Autocomplete(destinationInput);
   // Specify just the place data fields that you need.
   destinationAutocomplete.setFields(['place_id']);
 
@@ -131,15 +115,13 @@ function AutocompleteDirectionsHandler(map) {
   this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
   this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-  this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(
-      destinationInput);
+  this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
   this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
 }
 
 // Sets a listener on a radio button to change the filter type on Places
 // Autocomplete.
-AutocompleteDirectionsHandler.prototype.setupClickListener = function(
-    id, mode) {
+AutocompleteDirectionsHandler.prototype.setupClickListener = function(id, mode) {
   var radioButton = document.getElementById(id);
   var me = this;
 
@@ -149,10 +131,9 @@ AutocompleteDirectionsHandler.prototype.setupClickListener = function(
   });
 };
 
-AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
-    autocomplete, mode) {
-  var me = this;
+AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(autocomplete, mode) {
   autocomplete.bindTo('bounds', this.map);
+  var me = this;
 
   autocomplete.addListener('place_changed', function() {
     var place = autocomplete.getPlace();
@@ -161,19 +142,15 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
       window.alert('Please select an option from the dropdown list.');
       return;
     }
-    if (mode === 'ORIG') {
-      me.originPlaceId = place.place_id;
-    } else {
-      me.destinationPlaceId = place.place_id;
-    }
+
+    if (mode === 'ORIG') me.originPlaceId = place.place_id;
+    else me.destinationPlaceId = place.place_id;
     me.route();
   });
 };
 
 AutocompleteDirectionsHandler.prototype.route = function() {
-  if (!this.originPlaceId || !this.destinationPlaceId) {
-    return;
-  }
+  if (!this.originPlaceId || !this.destinationPlaceId) return;
   var me = this;
 
   this.directionsService.route(
@@ -183,10 +160,7 @@ AutocompleteDirectionsHandler.prototype.route = function() {
         travelMode: this.travelMode
       },
       function(response, status) {
-        if (status === 'OK') {
-          me.directionsDisplay.setDirections(response);
-        } else {
-          window.alert('Directions request failed due to ' + status);
-        }
+        if (status === 'OK')  me.directionsDisplay.setDirections(response);
+        else window.alert('Directions request failed due to ' + status);
       });
 };
