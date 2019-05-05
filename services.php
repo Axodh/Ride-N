@@ -4,140 +4,44 @@ require_once "navbar.php"; ?>
     <div class="container">
         <form action="#">
             <div class="row"><br>
-                <h2 class="col s12 m6 offset-m3 center smol white-text">nos services</h2>
+                <h2 class="col s12 m6 offset-m3 center smol white-text"><?php echo $GLOBALS['SERVICES_MAIN_TITLE'] ?></h2>
             </div>
             <div class="row">
                 <ul class="collapsible">
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">restaurant</i>Services de repas et boisson</div>
-                        <div class="collapsible-body" style="background-color: #F5F5F5">
-                            <table>
-                                <tr>
-                                    <td width="20px"><label><input type="checkbox" class="filled-in" id="eat-1"/><span></span></label></td>
-                                    <td width="800px">Menu du jour, boisson incluse (eau, soda, demi-bouteille de vin)</td>
-                                    <td>20€ TTC par personne</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="eat-2"/><span></span></label></td>
-                                    <td>Menu gastronomique</td>
-                                    <td>50€ TTC par personne</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="eat-3"/><span></span></label></td>
-                                    <td>Menu au choix parmi un ensemble de restaurants</td>
-                                    <td>Prix restaurant + 17€ TTC</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">headset</i>Locations d'audioguides et/ou appareils numériques</div>
-                        <div class="collapsible-body" style="background-color: #F5F5F5">
-                            <table>
-                                <tr>
-                                    <td width="20px"><label><input type="checkbox" class="filled-in" id="num-1"/><span></span></label></td>
-                                    <td width="800px">Ordinateur portable Mac Book Air</td>
-                                    <td>80€ TTC par personne</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="num-2"/><span></span></label></td>
-                                    <td>Ordinateur portable Mac Book Pro</td>
-                                    <td>150€ TTC par personne</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="num-3"/><span></span></label></td>
-                                    <td>Ordinateur portable Windows</td>
-                                    <td>60€ TTC par personne</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="num-4"/><span></span></label></td>
-                                    <td>Tablette Android ou Apple</td>
-                                    <td>40€ TTC</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="num-5"/><span></span></label></td>
-                                    <td>Réservation audio-guides</td>
-                                    <td>8€ TTC</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">local_see</i>Préparation de visites touristiques</div>
-                        <div class="collapsible-body" style="background-color: #F5F5F5">
-                            <table>
-                                <tr>
-                                    <td width="20px"><label><input type="checkbox" class="filled-in" id="tour-1"/><span></span></label></td>
-                                    <td width="800px">Réservation hôtel</td>
-                                    <td>10€ TTC par personne + chambre hôtel</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="tour-2"/><span></span></label></td>
-                                    <td>Achats billets touristiques</td>
-                                    <td>5€ TTC par personne + prix billet</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="tour-3"/><span></span></label></td>
-                                    <td>Réservation restaurant</td>
-                                    <td>6€ TTC par personne</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="tour-4"/><span></span></label></td>
-                                    <td>Autre</td>
-                                    <td>Nous consulter</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">language</i>Interprètes et coachs</div>
-                        <div class="collapsible-body" style="background-color: #F5F5F5">
-                            <table>
-                                <tr>
-                                    <td width="20px"><label><input type="checkbox" class="filled-in" id="lang-1"/><span></span></label></td>
-                                    <td width="800px">Interprètes</td>
-                                    <td>80€ TTC par heure</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="lang-2"/><span></span></label></td>
-                                    <td>Coach sportif</td>
-                                    <td>75€ TTC par heure</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="lang-3"/><span></span></label></td>
-                                    <td>Coach culture</td>
-                                    <td>120€ TTC par heure</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="lang-4"/><span></span></label></td>
-                                    <td>Autre</td>
-                                    <td>Nous consulter</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">pets</i>Pet-sitting</div>
-                        <div class="collapsible-body" style="background-color: #F5F5F5">
-                            <table>
-                                <tr>
-                                    <td width="20px"><label><input type="checkbox" class="filled-in" id="pet-1"/><span></span></label></td>
-                                    <td width="800px">Transport petit animal</td>
-                                    <td>Prix course + 35€ TTC</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="pet-2"/><span></span></label></td>
-                                    <td>Service transport vétérinaire</td>
-                                    <td>Prix course + 75€ TTC par visite</td>
-                                </tr>
-                                <tr>
-                                    <td><label><input type="checkbox" class="filled-in" id="pet-3"/><span></span></label></td>
-                                    <td>Autre</td>
-                                    <td>Nous consulter</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </li>
+                    <?php
+                    $maxServices = $db->query("SELECT max(idService) as value from services");
+                    $max = $maxServices->fetch(); // number of services
+
+                    for ($i = 1; $i <= $max['value']; $i++) { $j = 0;
+                        $services = $db->prepare("SELECT price, nbLeft from services WHERE idService = :idService");
+                        $info = $db->prepare("SELECT name, icon from services_names WHERE idService = :idService");
+
+                        $services -> execute([":idService"=>$i]);
+                        $info -> execute([":idService"=>$i]);
+
+                        $info = $info -> fetch();
+
+                        echo "<li>";
+                        echo "<div class=\"collapsible-header\"><i class=\"material-icons\">" .$info['icon']. "</i>" .$GLOBALS['SERVICES_TITLE_'.$i]. "</div>";
+                        echo "<div class=\"collapsible-body\" style=\"background-color: #F5F5F5\">";
+                        echo "<table>";
+
+                        foreach($services as $key=>$row) { $j++;
+
+                            if($row['price']!=0) $price = $row['price']. "€ " .$GLOBALS['SERVICES_REF_'.$i.'_'.$j];
+                            else $price = "Nous consulter";
+
+                            echo "<tr>";
+                            echo "<td width=\"20px\"><label><input type=\"checkbox\" class=\"filled-in\" id=\"" .$info['name']. "-" .$j. "\"/><span></span></label></td>";
+                            echo "<td width=\"800px\">" .$GLOBALS['SERVICES_SUB_'.$i.'_'.$j]. "</td>";
+                            echo "<td>" .$price. "</td>";
+                            echo "</tr>";
+                        }
+
+                        echo "</table>";
+                        echo "</div>";
+                        echo "</li>";
+                    } ?>
                 </ul>
             </div>
         </form>
