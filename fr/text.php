@@ -53,9 +53,9 @@ $GLOBALS['SERVICES_REF_1_2'] = "TTC par personne";
 $GLOBALS['SERVICES_SUB_1_3'] = "Menu au choix parmi un ensemble de restaurants";
 $GLOBALS['SERVICES_REF_1_3'] = "TTC + Prix du restaurant";
 
-$GLOBALS['SERVICES_SUB_2_1'] = "Ordinateur portable Mac Book Air";
+$GLOBALS['SERVICES_SUB_2_1'] = "Ordinateur portable MacBook Air";
 $GLOBALS['SERVICES_REF_2_1'] = "TTC par personne";
-$GLOBALS['SERVICES_SUB_2_2'] = "Ordinateur portable Mac Book Pro";
+$GLOBALS['SERVICES_SUB_2_2'] = "Ordinateur portable MacBook Pro";
 $GLOBALS['SERVICES_REF_2_2'] = "TTC par personne";
 $GLOBALS['SERVICES_SUB_2_3'] = "Ordinateur portable Windows";
 $GLOBALS['SERVICES_REF_2_3'] = "TTC par personne";
