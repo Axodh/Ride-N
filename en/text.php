@@ -39,7 +39,7 @@ $GLOBALS['REGISTER_SUBMIT'] = "register";
 $GLOBALS['LOG_OUT_TITLE'] = "log off";
 
 
-$GLOBALS['SERVICES_MAIN_TITLE'] = "Services";
+$GLOBALS['SERVICES_MAIN_TITLE'] = "services";
 $GLOBALS['SERVICES_TITLE_1'] = "Meal and drink services";
 $GLOBALS['SERVICES_TITLE_2'] = "Audioguide Rentals and / or Digital Devices";
 $GLOBALS['SERVICES_TITLE_3'] = "Preparation of sightseeing";
@@ -82,7 +82,7 @@ $GLOBALS['SERVICES_SUB_4_4'] = "Other";
 
 $GLOBALS['SERVICES_SUB_5_1'] = "Small animal transport";
 $GLOBALS['SERVICES_REF_5_1'] = "incl. taxes + Race price";
-$GLOBALS['SERVICES_SUB_5_2'] = "Service transport vétérinaire";
+$GLOBALS['SERVICES_SUB_5_2'] = "Veterinary services transport";
 $GLOBALS['SERVICES_REF_5_2'] = "TTC par visite + Race price";
 $GLOBALS['SERVICES_SUB_5_3'] = "Other";
 
