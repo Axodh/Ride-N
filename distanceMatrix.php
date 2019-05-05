@@ -1,4 +1,5 @@
 <?php
+
 require_once "functions.php";
 
 $departure = str_replace(' ','',$_POST["departure"]);
@@ -29,9 +30,17 @@ if( !empty($arrival) && !empty($departure) && isConnected() && !empty($date) && 
   $data = json_decode($distance);
 
   curl_close($curl);
-  $res = $data->rows[0]->elements[0]->distance->text;
-  $res2 = $data->rows[0]->elements[0]->duration->text;
-  echo $res, $res2;
+  $travelTime = $data->rows[0]->elements[0]->duration->text;
+  $distance = $data->rows[0]->elements[0]->distance->text;
+  echo "Commande enregistré";
+
+
+  $_SESSION['departure'] = $departure;
+  $_SESSION['arrival'] = $arrival;
+  $_SESSION['distance'] = $distance;
+  $_SESSION['travelTime'] = $travelTime;
+  $_SESSION['date'] = $date;
+  $_SESSION['time'] = $time;
 }
 
 ?>
