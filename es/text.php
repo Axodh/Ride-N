@@ -10,13 +10,19 @@ $GLOBALS['LANG_ES'] = "Español";
 
 $GLOBALS['NAV_SUBSCRIBE'] = "suscripción";
 $GLOBALS['NAV_SERVICES'] = "servicios";
-$GLOBALS['NAV_DEMO'] = "demostración";
+$GLOBALS['NAV_DEMO'] = "demo";
+$GLOBALS['NAV_HELLO'] = "hola";
+
+
+$GLOBALS['CART_TITLE'] = "mi cesto";
+$GLOBALS['CART_EMPTY'] = "La cesta de la compra esta vacía.";
+
 
 $GLOBALS['LOG_CHOICE_DRIVER'] = "yo soy un conductor";
-$GLOBALS['LOG_CHOICE_USER'] = " yo soy un usuario";
+$GLOBALS['LOG_CHOICE_USER'] = "yo soy un usuario";
 
 $GLOBALS['LOG_IN_TITLE'] = "conexión";
-$GLOBALS['LOG_IN_MAIL'] = "E-mail";
+$GLOBALS['LOG_IN_MAIL'] = "Email";
 $GLOBALS['LOG_IN_PWD'] = "Contraseña";
 $GLOBALS['LOG_IN_FORGOTTEN'] = "¿ Contraseña olvidadaé ?";
 $GLOBALS['LOG_IN_SUBMIT'] = "conectarse";
@@ -28,13 +34,63 @@ $GLOBALS['REGISTER_NUMBER'] = "Número";
 $GLOBALS['REGISTER_ADDRESS'] = "Dirección";
 $GLOBALS['REGISTER_CITY'] = "Ciudad";
 $GLOBALS['REGISTER_ZIP'] = "Código postal";
-$GLOBALS['REGISTER_MAIL'] = "E-mail";
+$GLOBALS['REGISTER_MAIL'] = "Email";
 $GLOBALS['REGISTER_PWD1'] = "Contraseña";
-$GLOBALS['REGISTER_PWD2'] = "confirmación";
+$GLOBALS['REGISTER_PWD2'] = "Confirmación";
 $GLOBALS['REGISTER_TERMS'] = "Estoy de acuerdo con los <a href='terms.php'>términos y Condiciones</a> de servicio.";
 $GLOBALS['REGISTER_SUBMIT'] = "registro";
 
 $GLOBALS['LOG_OUT_TITLE'] = "desconectarse";
+
+
+$GLOBALS['SERVICES_MAIN_TITLE'] = "servicio";
+$GLOBALS['SERVICES_TITLE_1'] = "Servicios de comidas y bebidas";
+$GLOBALS['SERVICES_TITLE_2'] = "Alquiler de audioguía y / o dispositivos digitales";
+$GLOBALS['SERVICES_TITLE_3'] = "Preparación de visitas guiadas";
+$GLOBALS['SERVICES_TITLE_4'] = "Intérpretes y entrenadores";
+$GLOBALS['SERVICES_TITLE_5'] = "Sesiones de mascotas";
+$GLOBALS['SERVICES_UNITS_LEFT'] = "unidades restantes";
+
+$GLOBALS['SERVICES_SUB_1_1'] = "Menú del día, bebida incluida (agua, soda, media botella de vino)";
+$GLOBALS['SERVICES_REF_1_1'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_1_2'] = "Menú gourmet";
+$GLOBALS['SERVICES_REF_1_2'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_1_3'] = "Menú a elegir entre un conjunto de restaurantes";
+$GLOBALS['SERVICES_REF_1_3'] = "Impuestos incluidos + Precio del restaurante";
+
+$GLOBALS['SERVICES_SUB_2_1'] = "Ordenador portátil MacBook Air";
+$GLOBALS['SERVICES_REF_2_1'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_2_2'] = "Ordenador portátil MacBook Pro";
+$GLOBALS['SERVICES_REF_2_2'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_2_3'] = "Ordenador portátil Windows";
+$GLOBALS['SERVICES_REF_2_3'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_2_4'] = "Tablet Android o Apple";
+$GLOBALS['SERVICES_REF_2_4'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_2_5'] = "Reservacion de audioguías";
+$GLOBALS['SERVICES_REF_2_5'] = "Impuestos incluidos / persona";
+
+$GLOBALS['SERVICES_SUB_3_1'] = "Reservacion de hotel";
+$GLOBALS['SERVICES_REF_3_1'] = "Impuestos incluidos / persona + habitación en hotel";
+$GLOBALS['SERVICES_SUB_3_2'] = "Compra de entradas turisticas";
+$GLOBALS['SERVICES_REF_3_2'] = "Impuestos incluidos / persona + prix billet";
+$GLOBALS['SERVICES_SUB_3_3'] = "Reservacion de restaurante";
+$GLOBALS['SERVICES_REF_3_3'] = "Impuestos incluidos / persona";
+$GLOBALS['SERVICES_SUB_3_4'] = "Otro";
+
+$GLOBALS['SERVICES_SUB_4_1'] = "Intérpretes";
+$GLOBALS['SERVICES_REF_4_1'] = "Impuestos incluidos para hora";
+$GLOBALS['SERVICES_SUB_4_2'] = "Entrenador deportivo";
+$GLOBALS['SERVICES_REF_4_2'] = "Impuestos incluidos para hora";
+$GLOBALS['SERVICES_SUB_4_3'] = "Entrenador cultivo";
+$GLOBALS['SERVICES_REF_4_3'] = "Impuestos incluidos para hora";
+$GLOBALS['SERVICES_SUB_4_4'] = "Otro";
+
+$GLOBALS['SERVICES_SUB_5_1'] = "Transporte de animales pequeños";
+$GLOBALS['SERVICES_REF_5_1'] = "Impuestos incluidos + Precio de carrera";
+$GLOBALS['SERVICES_SUB_5_2'] = "Servicio de transporte veterinario";
+$GLOBALS['SERVICES_REF_5_2'] = "Impuestos / visitas + Precio de carrera";
+$GLOBALS['SERVICES_SUB_5_3'] = "Otro";
+
 
 $GLOBALS['SUBSCRIBE_TITLE'] = "nuestras suscripciones";
 $GLOBALS['SUBSCRIBE_NO_SUB_TITLE'] = "sin suscripción";
@@ -73,12 +129,12 @@ $GLOBALS['SUBSCRIBE_CARD_3_CONTENT'] = "<p>¡Únase a la comunidad Ride'N como m
                                             <li>85€ (impuestos incluidos) / mes para una empresa con más de 10 empleados + 12€ impuestos incluidos por 10 empleados</li>
                                         </div>";
 
+
 $GLOBALS['SAVE_BACK'] = "Por favor regrese a la página anterior.";
 $GLOBALS['SAVE_WARN'] = "No has rellenado todos los campos !";
 
 $GLOBALS['TERMS_FOOTER'] = "volver al inicio";
 
-$GLOBALS['FOOTER_STUFF'] = "otro";
 $GLOBALS['FOOTER_TEAM'] = "equipo";
 $GLOBALS['FOOTER_TERMS'] = "términos";
 $GLOBALS['FOOTER_LANG'] = "idioma";

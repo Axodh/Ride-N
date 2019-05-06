@@ -9,8 +9,8 @@ $pwdv = $account->fetch();
 if(!$pwdv["isBanned"]){
     if(!empty($account)){
         if(password_verify($_POST["pwd"], $pwdv['pwd'])){
-            $_SESSION["mailUser"] = $_POST["mailUser"];
-            $_SESSION["surnameUser"] = $pwdv["surnameUser"];
+            $_SESSION["mailConnected"] = $_POST["mailUser"];
+            $_SESSION["surnameConnected"] = $pwdv["surnameUser"];
             header("Location: index.php");
         }else{
             $error = true;

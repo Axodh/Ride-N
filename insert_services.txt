@@ -1,0 +1,29 @@
+INSERT INTO `services_icons`(`idService`, `icon`) VALUES (1,"restaurant");
+INSERT INTO `services_icons`(`idService`, `icon`) VALUES (2,"headset");
+INSERT INTO `services_icons`(`idService`, `icon`) VALUES (3,"local_see");
+INSERT INTO `services_icons`(`idService`, `icon`) VALUES (4,"language");
+INSERT INTO `services_icons`(`idService`, `icon`) VALUES (5,"pets");
+
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (1, 20, NULL);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (1, 50, NULL);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (1, 17, NULL);
+
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (2, 80, 20);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (2, 150, 20);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (2, 60, 50);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (2, 40, 20);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (2, 8, 200);
+
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (3, 10, NULL);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (3, 5, NULL);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (3, 6, NULL);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (3, 0, NULL);
+
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (4, 80, NULL);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (4, 75, NULL);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (4, 120, NULL);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (4, 0, NULL);
+
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (5, 30, NULL);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (5, 75, NULL);
+INSERT INTO `services`(`idService`, `price`, `nbLeft`) VALUES (5, 0, NULL);

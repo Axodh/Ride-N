@@ -8,9 +8,9 @@ $account -> execute(["mailDriver"=>$_POST["mailDriver"]]);
 $pwdv = $account->fetch();
 if(!$pwdv["isBanned"]){
     if(!empty($account)){
-        if(password_verify($_POST["pwd"], $pwdv['pwd'])){
-            $_SESSION["mailUser"] = $_POST["mailDriver"];
-            $_SESSION["surnameUser"] = $pwdv["surnameDriver"];
+        if(password_verify($_POST["pwdDriver"], $pwdv['pwdDriver'])){
+            $_SESSION["mailConnected"] = $_POST["mailDriver"];
+            $_SESSION["surnameConnected"] = $pwdv["surnameDriver"];
             header("Location: index.php");
         }else{
             $error = true;
